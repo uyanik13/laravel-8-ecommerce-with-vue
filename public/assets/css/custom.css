@@ -1,0 +1,215 @@
+
+::-webkit-scrollbar {
+    width: 0;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #80bb0165;
+    border-radius: 10px;
+  }
+  .search_result_li{
+      height: 27px;
+      text-align: left;
+      margin-left: 15px;
+  }
+.search_result_li:hover{
+    cursor:pointer;
+    color:orange;
+}
+.search_result_a{
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 27px;
+}
+.search_result_a:hover{
+    text-align: left;
+    color:orange;
+}
+.header-top-menu {
+    display: flex;
+}
+
+.header-top-menu .accountActions {
+    flex-basis: 50%;
+}
+
+.header-top-menu .socialWidgets {
+    flex-basis: 50%;
+    text-align: left;
+}
+
+.header-top-menu .socialWidgets li {
+    margin-left: 10px;
+}
+
+.header-top-menu .socialWidgets li a {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    color: #fff;
+}
+
+.header-top-menu .socialWidgets li a:hover {
+    transform: scale(1.03);
+    opacity: .9;
+    color: #fff;
+}
+
+.header-top-menu .socialWidgets li:first-child a {
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+}
+
+.header-top-menu .socialWidgets li:nth-child(2) a {
+    background:linear-gradient(120deg, #3b5998, #91a7d4);
+}
+
+.header-top-menu .socialWidgets li:nth-child(3) a {
+    background:linear-gradient(120deg, #FF0000, #5c3f3f);
+}
+
+.header-top-menu .socialWidgets li:nth-child(4) a {
+    background:linear-gradient(45deg, #0077b5, #00a0dc);
+}
+
+@media(min-width: 992px) {
+    .mega-menu > li > .over-992{
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .mobileOffMenu {
+        display: none !important;
+    }
+    .over-992 {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-top-menu  {
+        flex-direction: column;
+    }
+
+    .header-top-menu .accountActions {
+        flex-basis: 100%;
+        margin-top: 15px;
+    }
+
+    .header-top-menu .socialWidgets {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .header-top-menu .socialWidgets li {
+        margin-left: 5px;
+    }
+
+    .logo img {
+        width: 190px;
+    }
+}
+
+.header-sticky.is-sticky .main-menu.main-menu-other-homepage nav ul li {
+    margin-right: 15px;
+}
+
+.header-sticky.is-sticky .main-menu.main-menu-other-homepage nav ul li a {
+    font-size: 13px;
+}
+
+/*
+**** App Menu */
+
+#appMenu {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    #appMenu {
+        display: block;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        padding: 0;
+        z-index: 999;
+        background: #fff;
+        width: 100%;
+        box-shadow: 0px -1px 5px 0px #00000029;;
+    }
+
+    #appMenu .appMenuContainer {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    #appMenu .appMenuContainer .appMenuItem a {
+        display: block;
+        padding: 15px 10px;
+    }
+
+    #appMenu .appMenuContainer .appMenuItem:nth-child(3) a {
+        padding: 10px;
+        position: relative;
+        bottom: 7px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0px 6px 7px 0px #0000003b;
+    }
+
+    #appMenu .appMenuContainer .appMenuItem:nth-child(3) a img {
+        width: 45px;
+    }
+
+    #appMenu .appMenuContainer .appMenuItem img {
+        width: 30px;
+    }
+
+    .mean-nav {
+        position: fixed;
+        bottom: 50px;
+        left: 0;
+    }
+
+    .mean-bar {
+        padding: 15px 10px;
+    }
+
+    #shopping-cart {
+        display: none;
+    }
+}
+
+
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

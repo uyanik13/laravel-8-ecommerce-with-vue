@@ -1,0 +1,5299 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700);/*=========================================================================================
+  File Name: app.scss
+  Description: Write your custom scss
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Author: Pixinvent
+  Author URL: hhttp://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+  File Name: main.scss
+  Description: Main scss file. Imports other scss partials from 'vuexy' folder
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy Admin - VueJS Dashboard Admin Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+/*=========================================================================================
+    File Name: _layout.scss
+    Description: partial- main layout styles container - imports layout styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+  File Name: _layoutCommon.scss
+  Description: Common layout styles. This style will apply to all layouts
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+html {
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  line-height: 1.5;
+  letter-spacing: 0.01rem;
+}
+
+body {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  max-width: 100%;
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+[dir] body {
+  background: #f8f8f8;
+}
+
+#app {
+  min-height: 100%;
+}
+
+.vx-logo .vx-logo-text {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+[dir=ltr] .vx-logo .vx-logo-text {
+  -webkit-animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+  animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+}
+
+[dir=rtl] .vx-logo .vx-logo-text {
+  -webkit-animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+          animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+}
+
+.router-view {
+  position: relative;
+}
+
+[dir] .router-view {
+  padding: 2.2rem;
+}
+
+@media (max-width: 576px) {
+  [dir] .router-view {
+    padding: 1.2rem !important;
+  }
+
+  [dir] .footer-sticky .router-view {
+    padding-bottom: 5rem !important;
+  }
+}
+
+.router-view .content-area__heading h2 {
+  color: #636363;
+}
+
+.layout--main {
+  height: 100%;
+  min-height: 100%;
+}
+
+#content-overlay {
+  position: fixed;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  transition: opacity 0.7s;
+  z-index: -1;
+}
+
+[dir] #content-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+[dir=ltr] #content-overlay {
+  left: 0;
+  right: 0;
+}
+
+[dir=rtl] #content-overlay {
+  right: 0;
+  left: 0;
+}
+
+.show-overlay #content-overlay {
+  z-index: 41001;
+  opacity: 1;
+}
+
+.the-footer {
+  display: flex;
+  align-items: center;
+}
+
+#content-area {
+  height: 100%;
+}
+
+[dir=ltr] #content-area {
+  transition: margin-left 0.5s;
+}
+
+[dir=rtl] #content-area {
+  transition: margin-right 0.5s;
+}
+
+#content-area .content-wrapper {
+  min-height: calc(var(--vh, 1vh) * 100 - 3.5rem);
+}
+
+.navbar-static #content-area .content-wrapper {
+  min-height: calc(var(--vh, 1vh) * 100 - 8rem);
+}
+
+[dir=ltr] #content-area.content-area-reduced {
+  margin-left: 260px;
+}
+
+[dir=rtl] #content-area.content-area-reduced {
+  margin-right: 260px;
+}
+
+[dir=ltr] #content-area.content-area-lg {
+  margin-left: 80px;
+}
+
+[dir=rtl] #content-area.content-area-lg {
+  margin-right: 80px;
+}
+
+[dir=ltr] #content-area.content-area-full {
+  margin-left: 0px;
+}
+
+[dir=rtl] #content-area.content-area-full {
+  margin-right: 0px;
+}
+
+[dir] .navbar-floating .router-content {
+  margin-top: 5.5rem;
+}
+
+@media (max-width: 576px) {
+  [dir] .navbar-floating .router-content {
+    margin-top: 6rem;
+  }
+}
+
+[dir] div[id$=demo] .vx-card:not(:last-of-type) {
+  margin-bottom: 2.2rem;
+}
+
+.vue-back-to-top {
+  z-index: 51000 !important;
+}
+
+.demo-alignment {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+[dir] .demo-alignment > * {
+  margin-top: 1.5rem;
+}
+
+[dir=ltr] .demo-alignment > * {
+  margin-right: 1.5rem;
+}
+
+[dir=rtl] .demo-alignment > * {
+  margin-left: 1.5rem;
+}
+
+[dir] .op-block {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+[dir=ltr] .op-block {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+[dir=rtl] .op-block {
+  box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 14.1rem);
+}
+
+/*=========================================================================================
+  File Name: _layoutVertical.scss
+  Description: Vertical Layout Styles
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+[dir] .main-vertical.navbar-sticky .router-content {
+  margin-top: 4.5rem;
+}
+
+[dir] .main-vertical.navbar-static .vx-navbar-wrapper .vx-navbar {
+  background: transparent !important;
+  box-shadow: none;
+}
+
+[dir] .main-vertical.navbar-static .router-content {
+  margin-top: 0.2rem;
+}
+
+[dir] .no-scroll .router-view {
+  padding-bottom: 0 !important;
+}
+
+.no-scroll.navbar-floating .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 11.5rem);
+}
+
+.no-scroll.navbar-floating.footer-hidden .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 9.3rem);
+}
+
+.no-scroll.navbar-floating.footer-sticky .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 13.1rem);
+}
+
+.no-scroll.navbar-sticky .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 10.5rem);
+}
+
+.no-scroll.navbar-sticky.footer-hidden .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 8.3rem);
+}
+
+.no-scroll.navbar-sticky.footer-sticky .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 12.1rem);
+}
+
+.no-scroll.navbar-static.footer-static .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 9.25rem);
+}
+
+.no-scroll.navbar-static.footer-sticky .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 10.9rem);
+}
+
+.no-scroll.navbar-static.footer-hidden .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 7rem);
+}
+
+.no-scroll.navbar-hidden .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 6rem);
+}
+
+.no-scroll.navbar-hidden.footer-hidden .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 3.8rem);
+}
+
+.no-scroll.navbar-hidden.footer-sticky .no-scroll-content {
+  height: calc(var(--vh, 1vh) * 100 - 7.6rem);
+}
+
+/*=========================================================================================
+  File Name: _layoutHorizontal.scss
+  Description: Horizontal Layout Styles
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.main-horizontal .vx-navbar-wrapper.nav-menu-wrapper {
+  z-index: 41000;
+}
+
+.main-horizontal .vx-navbar-wrapper .vx-navbar {
+  z-index: 40001;
+}
+
+@media (min-width: 1200px) {
+  .main-horizontal .vx-navbar-wrapper .search-full-container .vx-auto-suggest .auto-suggest-suggestions-list {
+    width: calc(100% - 2rem) !important;
+  }
+  [dir=ltr] .main-horizontal .vx-navbar-wrapper .search-full-container .vx-auto-suggest .auto-suggest-suggestions-list {
+    margin-left: 1rem;
+  }
+  [dir=rtl] .main-horizontal .vx-navbar-wrapper .search-full-container .vx-auto-suggest .auto-suggest-suggestions-list {
+    margin-right: 1rem;
+  }
+}
+
+[dir=ltr] .main-horizontal.navbar-floating .vs-navbar.vx-navbar {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
+[dir=rtl] .main-horizontal.navbar-floating .vs-navbar.vx-navbar {
+  padding-right: 1.25rem !important;
+  padding-left: 1.25rem !important;
+}
+
+[dir] .main-horizontal.navbar-sticky .router-content {
+  margin-top: 4.5rem;
+}
+
+@media (min-width: 1200px) {
+  [dir] .main-horizontal.navbar-sticky .router-content {
+    margin-top: 8.89rem;
+  }
+}
+
+.main-horizontal.navbar-sticky .vx-navbar-wrapper:not(.nav-menu-wrapper) {
+  height: 62px;
+}
+
+[dir] .main-horizontal.navbar-sticky .vs-navbar:not(.vx-navbar) {
+  background-color: #f7f7f7 !important;
+}
+
+[dir] .main-horizontal.navbar-sticky .vs-navbar.vx-navbar, [dir] .main-horizontal.navbar-static .vs-navbar.vx-navbar {
+  box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.03);
+}
+
+@media (min-width: 1200px) {
+  [dir] .main-horizontal.navbar-static .router-content {
+    margin-top: 1rem;
+  }
+}
+
+.main-horizontal.navbar-static #content-area .content-wrapper {
+  min-height: calc(var(--vh, 1vh) * 100 - 8rem - 62px);
+}
+
+@media (min-width: 1200px) {
+  .main-horizontal.navbar-static .vx-navbar-wrapper:not(.nav-menu-wrapper) {
+    position: fixed;
+  }
+}
+
+@media (max-width: 1199px) {
+  [dir] .main-horizontal.navbar-static .vx-navbar-wrapper .vx-navbar {
+    background: transparent !important;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .main-horizontal.navbar-hidden .vx-navbar-wrapper {
+    display: none;
+  }
+}
+
+.main-horizontal.navbar-hidden .vx-navbar-wrapper {
+  position: fixed;
+}
+
+.main-horizontal.navbar-hidden .vx-navbar-wrapper.nav-menu-wrapper {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  [dir] .main-horizontal.navbar-hidden .router-view {
+    margin-top: 4.5rem;
+  }
+}
+
+.main-horizontal:not(.navbar-static) .vx-navbar-wrapper.nav-menu-wrapper {
+  top: 62px;
+}
+
+@media (min-width: 1200px) {
+  .main-horizontal {
+    /*
+      Only applies to NavMenu in horizontal layout
+      media query is given -> because navMenu in horizontal will be visible till 1200px.
+    */
+  }
+
+  [dir] .main-horizontal.navbar-floating .router-content {
+    margin-top: 10.1rem;
+  }
+
+  [dir] .main-horizontal .vs-navbar.vx-navbar {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  [dir] .main-horizontal.no-scroll .router-view {
+    padding-bottom: 0;
+  }
+
+  .main-horizontal.no-scroll.navbar-floating .no-scroll-content {
+    height: calc(var(--vh, 1vh) * 100 - 16rem);
+  }
+
+  .main-horizontal.no-scroll.navbar-floating.footer-hidden .no-scroll-content {
+    height: calc(var(--vh, 1vh) * 100 - 13.4rem);
+  }
+
+  .main-horizontal.no-scroll.navbar-floating.footer-sticky .no-scroll-content {
+    height: calc(var(--vh, 1vh) * 100 - 16.7rem);
+  }
+
+  .main-horizontal.no-scroll.navbar-sticky .no-scroll-content {
+    height: calc(var(--vh, 1vh) * 100 - 14.7rem);
+  }
+
+  .main-horizontal.no-scroll.navbar-sticky.footer-hidden .no-scroll-content {
+    height: calc(var(--vh, 1vh) * 100 - 12.7rem);
+  }
+
+  .main-horizontal.no-scroll.navbar-sticky.footer-sticky .no-scroll-content {
+    height: calc(var(--vh, 1vh) * 100 - 16.2rem);
+  }
+
+  .main-horizontal.no-scroll.navbar-static.footer-static .no-scroll-content {
+    height: calc(var(--vh, 1vh) * 100 - 14.75rem);
+  }
+
+  .main-horizontal.no-scroll.navbar-static.footer-sticky .no-scroll-content {
+    height: calc(var(--vh, 1vh) * 100 - 16.7rem);
+  }
+
+  .main-horizontal.no-scroll.navbar-static.footer-hidden .no-scroll-content {
+    height: calc(var(--vh, 1vh) * 100 - 13rem);
+  }
+}
+
+/*=========================================================================================
+  File Name: _theNavbar.scss
+  Description: The navbar styles
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.vs-navbar.navbar-skelton {
+  width: 100%;
+  transition: all 0.5s;
+  z-index: 10000;
+}
+
+[dir] .vs-navbar.navbar-skelton {
+  padding: 0.8rem 2.2rem;
+}
+
+.navbar-sticky .vx-navbar-wrapper,
+.navbar-floating .vx-navbar-wrapper {
+  position: fixed;
+}
+
+.vx-navbar-wrapper {
+  background-repeat-x: repeat;
+  z-index: 41001;
+  width: 100%;
+  height: 103px;
+  background-repeat-y: no-repeat;
+  top: 0;
+}
+
+[dir] .vx-navbar-wrapper {
+  background: linear-gradient(to bottom, rgba(248, 248, 248, 0.95) 44%, rgba(248, 248, 248, 0.46) 73%, rgba(255, 255, 255, 0) 100%);
+}
+
+.vx-navbar-wrapper .vx-navbar .vs-con-items {
+  width: 100%;
+}
+
+[dir] .vx-navbar-wrapper .vx-navbar .vs-con-items .search-full-container {
+  background: #fff;
+}
+
+.vx-navbar-wrapper .vx-navbar .vs-con-items .vx-auto-suggest {
+  color: #626262;
+}
+
+@media (min-width: 1201px) {
+  .main-vertical .vx-navbar-wrapper {
+    width: calc(100% - 260px);
+  }
+}
+
+.content-area-lg .vx-navbar-wrapper {
+  width: calc(100% - 80px);
+}
+
+[dir] .show-overlay .vx-navbar-wrapper {
+  background: linear-gradient(to bottom, rgba(44, 48, 60, 0.9) 44%, rgba(44, 48, 60, 0.43) 73%, rgba(44, 48, 60, 0) 100%);
+}
+
+@media (min-width: 577px) {
+  [dir] .navbar-floating .vx-navbar-wrapper {
+    padding: 1.3rem 2.2rem 2.2rem;
+  }
+}
+
+[dir] .navbar-floating .vx-navbar {
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+}
+
+[dir] .navbar-floating .vx-navbar .search-full-container {
+  border-radius: 0.5rem;
+}
+
+[dir] .navbar-sticky .vx-navbar-wrapper {
+  background: none;
+}
+
+.navbar-sticky .content-area-lg .vx-navbar-wrapper .vx-navbar {
+  width: 100%;
+}
+
+.navbar-static .vx-navbar-wrapper .vx-navbar .vx-auto-suggest .auto-suggest-suggestions-list,
+.navbar-sticky .vx-navbar-wrapper .vx-navbar .vx-auto-suggest .auto-suggest-suggestions-list {
+  width: calc(100% - 2rem) !important;
+}
+
+[dir=ltr] .navbar-static .vx-navbar-wrapper .vx-navbar .vx-auto-suggest .auto-suggest-suggestions-list, [dir=ltr] .navbar-sticky .vx-navbar-wrapper .vx-navbar .vx-auto-suggest .auto-suggest-suggestions-list {
+  margin-left: 1rem;
+}
+
+[dir=rtl] .navbar-static .vx-navbar-wrapper .vx-navbar .vx-auto-suggest .auto-suggest-suggestions-list, [dir=rtl] .navbar-sticky .vx-navbar-wrapper .vx-navbar .vx-auto-suggest .auto-suggest-suggestions-list {
+  margin-right: 1rem;
+}
+
+.main-vertical.navbar-static .vx-navbar-wrapper .vx-navbar {
+  z-index: 41001;
+}
+
+.navbar-static .vx-navbar-wrapper {
+  height: auto;
+  width: 100%;
+}
+
+[dir] .navbar-static .vx-navbar-wrapper {
+  background: none;
+}
+
+.navbar-static .vx-navbar-wrapper .vx-navbar {
+  position: relative;
+}
+
+[dir] .navbar-static .router-view {
+  padding-top: 1rem;
+}
+
+.navbar-hidden.main-vertical .vx-navbar-wrapper {
+  display: none;
+}
+
+.search-full-container {
+  z-index: 50000;
+}
+
+.search-full-container .vx-auto-suggest > div {
+  height: 100%;
+}
+
+[dir] .search-full-container .vx-auto-suggest input[type=text], [dir] .search-full-container .vx-auto-suggest .input-span-placeholder {
+  padding: 1.6rem 3rem !important;
+}
+
+.search-full-container .vx-auto-suggest .vs-input--icon.feather {
+  top: 32% !important;
+}
+
+[dir=ltr] .search-full-container .vx-auto-suggest .vs-input--icon.feather {
+  left: 0.8rem;
+}
+
+[dir=rtl] .search-full-container .vx-auto-suggest .vs-input--icon.feather {
+  right: 0.8rem;
+}
+
+.search-full-container > div.feather-icon {
+  position: absolute !important;
+}
+
+.bookmark-dropdown {
+  z-index: 41002;
+}
+
+.navbar-custom .vs-navbar--btn-responsive {
+  display: none !important;
+}
+
+.navbar-custom .vs-spacer {
+  display: block !important;
+}
+
+.navbar-custom .vs-con-items {
+  display: flex !important;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  [dir] .navbar-sticky .vx-navbar-wrapper .vx-navbar {
+    padding: 0.8rem 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  [dir] .vx-navbar-wrapper {
+    padding: 1.2rem;
+  }
+
+  [dir] .navbar-sticky .vx-navbar-wrapper {
+    padding: 0;
+  }
+
+  [dir] .navbar-sticky .vx-navbar-wrapper .vx-navbar {
+    padding: 0.8rem 1.5rem;
+  }
+
+  [dir] .navbar-static .vx-navbar-wrapper {
+    padding: 0;
+  }
+
+  [dir] .navbar-static .vx-navbar-wrapper .vx-navbar {
+    padding: 0.8rem 1.5rem;
+  }
+
+  [dir] .navbar-static.main-vertical .router-view .router-content {
+    margin-top: 0;
+  }
+}
+
+.starred-page:hover,
+.starred-page--more:hover {
+  color: rgba(var(--vs-primary), 1);
+}
+
+.i18n-dropdown .vs-dropdown--item-link {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 364px) {
+  .i18n-dropdown {
+    width: 95vw;
+  }
+  [dir=ltr] .i18n-dropdown {
+    left: 90vw !important;
+  }
+  [dir=rtl] .i18n-dropdown {
+    right: 90vw !important;
+  }
+
+  .i18n-dropdown .vs-dropdown--menu--after {
+    display: none;
+  }
+}
+
+.cart-dropdown {
+  width: 365px;
+}
+
+.cart-dropdown .cart-dropdown-item-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  transition: 0.35s;
+}
+
+.notification-dropdown,
+.cart-dropdown {
+  width: 365px;
+}
+
+@media screen and (max-width: 500px) {
+  .notification-dropdown,
+  .cart-dropdown {
+    width: 95vw;
+  }
+  [dir=ltr] .notification-dropdown, [dir=ltr] .cart-dropdown {
+    left: 97.5vw !important;
+  }
+  [dir=rtl] .notification-dropdown, [dir=rtl] .cart-dropdown {
+    right: 97.5vw !important;
+  }
+
+  .notification-dropdown .vs-dropdown--menu--after,
+  .cart-dropdown .vs-dropdown--menu--after {
+    display: none;
+  }
+}
+
+[dir] .notification-dropdown .notification:hover, [dir] .cart-dropdown .notification:hover {
+  background-color: #f7f7f7;
+}
+
+[dir] .notification-dropdown .checkout-footer, [dir] .notification-dropdown .notification-footer, [dir] .cart-dropdown .checkout-footer, [dir] .cart-dropdown .notification-footer {
+  background-color: #f8f8f8;
+}
+
+.scroll-area--nofications-dropdown,
+.scroll-area--cart-items-dropdowm {
+  position: relative;
+  width: 100%;
+  max-height: 25rem;
+}
+
+[dir] .scroll-area--nofications-dropdown, [dir] .scroll-area--cart-items-dropdowm {
+  margin: auto;
+}
+
+.scroll-area--nofications-dropdown:not(.ps),
+.scroll-area--cart-items-dropdowm:not(.ps) {
+  overflow-y: auto;
+}
+
+@media screen and (max-height: 334px) {
+  .vx-navbar-dropdown {
+    top: calc(var(--vh, 1vh) * 100 - 82.5vh) !important;
+  }
+
+  .vx-navbar-dropdown .vs-dropdown--menu--after {
+    display: none;
+  }
+}
+
+/*=========================================================================================
+    File Name: _footer.scss
+    Description: Footer styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.footer-sticky .the-footer {
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 260px);
+  z-index: 40000;
+}
+
+[dir] .footer-sticky .the-footer {
+  background: #fff;
+  box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.footer-sticky .content-area-lg .the-footer {
+  width: calc(100% - 80px);
+}
+
+.footer-sticky .content-area-full .the-footer {
+  width: 100%;
+}
+
+[dir] .footer-sticky .router-view {
+  padding-bottom: 5rem;
+}
+
+.footer-hidden .the-footer {
+  display: none;
+}
+
+[dir] .the-footer {
+  padding: 1rem 2.2rem;
+}
+
+/*=========================================================================================
+  File Name: _typography.scss
+  Description: partial- typography styles
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+body {
+  color: #626262;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #2c2c2c;
+}
+
+h1,
+.h1 {
+  font-size: 28px;
+}
+
+h2,
+.h2 {
+  font-size: 24.36px;
+}
+
+h3,
+.h3 {
+  font-size: 21.14px;
+}
+
+h4,
+.h4 {
+  font-size: 18.48px;
+}
+
+h5,
+.h5 {
+  font-size: 15.96px;
+}
+
+h6,
+.h6 {
+  font-size: 14px;
+}
+
+.vs-tooltip h4 {
+  color: #fff;
+}
+
+a:active,
+a:visited,
+a:hover,
+a {
+  color: rgba(var(--vs-primary), 1);
+}
+
+u {
+  text-decoration: underline;
+}
+
+/*=========================================================================================
+    File Name: _misc.scss
+    Description: partial- misc styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+code {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+[dir] code {
+  background: #eee;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+[dir] ul, [dir] ol {
+  margin: 0;
+  padding: 0;
+}
+
+[dir] .layout--full-page .bg-img {
+  background-image: url("/images/pages/vuexy-login-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+[dir] .layout--full-page .full-page-bg-color {
+  background-color: #eff2f7;
+}
+
+.single-counter {
+  display: inline-block;
+  position: relative;
+  width: 105px;
+}
+
+[dir] .single-counter {
+  padding: 18px 10px 10px;
+}
+
+.single-counter span {
+  display: block;
+}
+
+[dir] .single-counter span {
+  text-align: center;
+}
+
+.single-counter .timer {
+  font-size: 3rem;
+}
+
+.chat-card-log {
+  height: 240px;
+}
+
+.vjs-poster {
+  width: 100% !important;
+}
+
+[dir] .vjs-poster {
+  background-size: cover !important;
+}
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+i.feather {
+  font-weight: 100;
+}
+
+.feather.feather-menu {
+  z-index: 9;
+}
+
+.scroll-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+[dir] .scroll-area {
+  margin: auto;
+}
+
+.scroll-area:not(.ps) {
+  overflow-y: auto;
+}
+
+/*=========================================================================================
+  File Name: _extraComponents.scss
+  Description: partial - imports extra components styles
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+  File Name: _awesomeSwiper.scss
+  Description: Styles for awesome swiper plugin
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+[dir] .swiper-pagination-bullet-active {
+  background: rgba(var(--vs-primary), 1) !important;
+}
+
+[dir] .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: rgba(var(--vs-primary), 1) !important;
+}
+
+/*=========================================================================================
+  File Name: _formWizard.scss
+  Description: Styles for form wizard externsion.
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.vue-form-wizard.md .wizard-navigation .wizard-progress-with-circle {
+  top: 33px !important;
+}
+
+.vue-form-wizard.md .wizard-navigation .wizard-nav .wizard-icon-circle {
+  width: 55px;
+  height: 55px;
+}
+
+[dir] .vue-form-wizard.md .wizard-navigation .wizard-nav .wizard-icon-circle {
+  border: 3px solid #cccccc;
+}
+
+.vue-form-wizard.md .wizard-navigation .wizard-nav .wizard-icon-circle .wizard-icon {
+  font-size: 1.5rem;
+}
+
+.vue-form-wizard.md .wizard-navigation .wizard-nav .stepTitle {
+  color: #626262;
+}
+
+i.wizard-icon {
+  font-style: inherit;
+}
+
+[dir] .stepTitle {
+  margin-top: 0.5rem;
+}
+
+[dir] .select-large input.vs-select--input {
+  padding: 11px;
+}
+
+/*=========================================================================================
+    File Name: _vueSelect.scss
+    Description: vue-select component style.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+.v-select:not(.vs--single) .vs__selected {
+  font-size: 0.9rem;
+}
+
+[dir] .v-select .vs__dropdown-toggle {
+  padding: 0.59px 0 4px 0;
+}
+
+.v-select .vs__dropdown-toggle .vs__search {
+  color: #626262;
+}
+
+.v-select .vs__dropdown-toggle .vs__deselect svg {
+  stroke: #626262;
+  opacity: 0.5;
+}
+
+[dir] .v-select .vs__dropdown-toggle .vs__deselect svg {
+  margin-top: 0 !important;
+}
+
+.v-select .vs__dropdown-toggle .vs__actions .vs__clear {
+  color: #626262;
+}
+
+.v-select .vs__dropdown-menu .vs__dropdown-option--highlight {
+  color: #fff !important;
+}
+
+.v-select .vs__dropdown-menu .vs__dropdown-option {
+  color: #626262;
+}
+
+.v-select .vs__selected {
+  color: #626262;
+}
+
+[dir] .theme-dark .v-select .vs__dropdown-toggle {
+  background: #262c49;
+}
+
+.theme-dark .v-select .vs__dropdown-toggle .vs__clear svg {
+  stroke: #b8c2cc;
+}
+
+.theme-dark .v-select .vs__dropdown-toggle .vs__deselect svg {
+  stroke: #b8c2cc;
+  opacity: 0.7;
+}
+
+[dir] .theme-dark .v-select:not(.vs--single) .vs__selected {
+  background: #10163a;
+  border: none;
+}
+
+.theme-dark .v-select .vs__selected {
+  color: #fff;
+}
+
+.theme-dark .v-select .vs__open-indicator {
+  fill: #b8c2cc;
+}
+
+[dir] .theme-dark .v-select .vs__dropdown-menu {
+  background: #262c49;
+}
+
+.theme-dark .v-select .vs__dropdown-menu .vs__dropdown-option {
+  color: #c2c6dc;
+}
+
+.v-select {
+  position: relative;
+  font-family: inherit;
+}
+
+.v-select,
+.v-select * {
+  box-sizing: border-box;
+}
+
+/* KeyFrames */
+
+@-webkit-keyframes vSelectSpinner-ltr {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes vSelectSpinner-rtl {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes vSelectSpinner-ltr {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes vSelectSpinner-rtl {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Dropdown Default Transition */
+
+.vs__fade-enter-active,
+.vs__fade-leave-active {
+  pointer-events: none;
+  transition: opacity 0.15s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.vs__fade-enter,
+.vs__fade-leave-to {
+  opacity: 0;
+}
+
+/** Component States */
+
+/*
+ * Disabled
+ *
+ * When the component is disabled, all interaction
+ * should be prevented. Here we modify the bg color,
+ * and change the cursor displayed on the interactive
+ * components.
+ */
+
+[dir] .vs--disabled .vs__dropdown-toggle, [dir] .vs--disabled .vs__clear, [dir] .vs--disabled .vs__search, [dir] .vs--disabled .vs__selected, [dir] .vs--disabled .vs__open-indicator {
+  cursor: not-allowed;
+  background-color: #f8f8f8;
+}
+
+/*
+ *  RTL - Right to Left Support
+ *
+ *  Because we're using a flexbox layout, the `dir="rtl"`
+ *  HTML attribute does most of the work for us by
+ *  rearranging the child elements visually.
+ */
+
+.v-select[dir=rtl] .vs__actions {
+  padding: 0 3px 0 6px;
+}
+
+.v-select[dir=rtl] .vs__clear {
+  margin-left: 6px;
+  margin-right: 0;
+}
+
+.v-select[dir=rtl] .vs__deselect {
+  margin-left: 0;
+  margin-right: 2px;
+}
+
+.v-select[dir=rtl] .vs__dropdown-menu {
+  text-align: right;
+}
+
+/**
+    Dropdown Toggle
+
+    The dropdown toggle is the primary wrapper of the component. It
+    has two direct descendants: .vs__selected-options, and .vs__actions.
+
+    .vs__selected-options holds the .vs__selected's as well as the
+    main search input.
+
+    .vs__actions holds the clear button and dropdown toggle.
+ */
+
+.vs__dropdown-toggle {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: flex;
+  white-space: normal;
+}
+
+[dir] .vs__dropdown-toggle {
+  padding: 0 0 4px 0;
+  background: none;
+  border: 1px solid rgba(60, 60, 60, 0.26);
+  border-radius: 4px;
+}
+
+.vs__selected-options {
+  display: flex;
+  flex-basis: 100%;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+[dir] .vs__selected-options {
+  padding: 0 2px;
+}
+
+.vs__actions {
+  display: flex;
+  align-items: center;
+}
+
+[dir=ltr] .vs__actions {
+  padding: 4px 6px 0 3px;
+}
+
+[dir=rtl] .vs__actions {
+  padding: 4px 3px 0 6px;
+}
+
+/* Dropdown Toggle States */
+
+[dir] .vs--searchable .vs__dropdown-toggle {
+  cursor: text;
+}
+
+[dir] .vs--unsearchable .vs__dropdown-toggle {
+  cursor: pointer;
+}
+
+[dir] .vs--open .vs__dropdown-toggle {
+  border-bottom-color: transparent;
+}
+
+[dir=ltr] .vs--open .vs__dropdown-toggle {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+[dir=rtl] .vs--open .vs__dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.vs__open-indicator {
+  fill: rgba(60, 60, 60, 0.5);
+  -webkit-transform: scale(1);
+  transition: transform 150ms cubic-bezier(1, -0.115, 0.975, 0.855);
+}
+
+[dir] .vs__open-indicator {
+          transform: scale(1);
+  transition-timing-function: cubic-bezier(1, -0.115, 0.975, 0.855);
+}
+
+[dir=ltr] .vs--open .vs__open-indicator {
+  transform: rotate(180deg) scale(1);
+}
+
+[dir=rtl] .vs--open .vs__open-indicator {
+  transform: rotate(-180deg) scale(1);
+}
+
+.vs--loading .vs__open-indicator {
+  opacity: 0;
+}
+
+/* Clear Button */
+
+.vs__clear {
+  fill: rgba(60, 60, 60, 0.5);
+}
+
+[dir] .vs__clear {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+[dir=ltr] .vs__clear {
+  margin-right: 8px;
+}
+
+[dir=rtl] .vs__clear {
+  margin-left: 8px;
+}
+
+/* Dropdown Menu */
+
+.vs__dropdown-menu {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: calc(100% - 1px);
+  z-index: 1000;
+  width: 100%;
+  max-height: 350px;
+  min-width: 160px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+[dir] .vs__dropdown-menu {
+  padding: 5px 0;
+  margin: 0;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(60, 60, 60, 0.26);
+  border-top-style: none;
+  border-radius: 0 0 4px 4px;
+  background: #fff;
+}
+
+[dir=ltr] .vs__dropdown-menu {
+  left: 0;
+  text-align: left;
+}
+
+[dir=rtl] .vs__dropdown-menu {
+  right: 0;
+  text-align: right;
+}
+
+[dir] .vs__no-options {
+  text-align: center;
+}
+
+/* List Items */
+
+.vs__dropdown-option {
+  line-height: 1.42857143;
+  /* Normalize line height */
+  display: block;
+  color: #333;
+  /* Overrides most CSS frameworks */
+  white-space: nowrap;
+}
+
+[dir] .vs__dropdown-option {
+  padding: 3px 20px;
+  clear: both;
+}
+
+[dir] .vs__dropdown-option:hover {
+  cursor: pointer;
+}
+
+.vs__dropdown-option--highlight {
+  color: #fff;
+}
+
+[dir] .vs__dropdown-option--highlight {
+  background: rgba(var(--vs-primary), 1);
+}
+
+.vs__dropdown-option--disabled {
+  color: rgba(60, 60, 60, 0.5);
+}
+
+[dir] .vs__dropdown-option--disabled {
+  background: inherit;
+}
+
+[dir] .vs__dropdown-option--disabled:hover {
+  cursor: inherit;
+}
+
+/* Selected Tags */
+
+.vs__selected {
+  display: flex;
+  align-items: center;
+  color: #333;
+  line-height: 1.8;
+  z-index: 0;
+}
+
+[dir] .vs__selected {
+  background-color: #f0f0f0;
+  border: 1px solid rgba(60, 60, 60, 0.26);
+  border-radius: 4px;
+  margin: 4px 2px 0px 2px;
+  padding: 0 0.25em;
+}
+
+.vs__deselect {
+  display: inline-flex;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  fill: rgba(60, 60, 60, 0.5);
+}
+
+[dir] .vs__deselect {
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: none;
+  text-shadow: 0 1px 0 #fff;
+}
+
+[dir=ltr] .vs__deselect {
+  margin-left: 4px;
+}
+
+[dir=rtl] .vs__deselect {
+  margin-right: 4px;
+}
+
+/* States */
+
+[dir] .vs--single .vs__selected {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.vs--single.vs--open .vs__selected {
+  position: absolute;
+  opacity: 0.4;
+}
+
+.vs--single.vs--searching .vs__selected {
+  display: none;
+}
+
+/* Search Input */
+
+/**
+ * Super weird bug... If this declaration is grouped
+ * below, the cancel button will still appear in chrome.
+ * If it's up here on it's own, it'll hide it.
+ */
+
+.vs__search::-webkit-search-cancel-button {
+  display: none;
+}
+
+.vs__search::-webkit-search-decoration,
+.vs__search::-webkit-search-results-button,
+.vs__search::-webkit-search-results-decoration,
+.vs__search::-ms-clear {
+  display: none;
+}
+
+.vs__search,
+.vs__search:focus {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  line-height: 1.8;
+  font-size: 1em;
+  outline: none;
+  width: 0;
+  max-width: 100%;
+  flex-grow: 1;
+  z-index: 1;
+}
+
+[dir] .vs__search, [dir] .vs__search:focus {
+  border: 1px solid transparent;
+  margin: 4px 0 0 0;
+  padding: 0 7px;
+  background: none;
+  box-shadow: none;
+}
+
+[dir=ltr] .vs__search, [dir=ltr] .vs__search:focus {
+  border-left: none;
+}
+
+[dir=rtl] .vs__search, [dir=rtl] .vs__search:focus {
+  border-right: none;
+}
+
+.vs__search::-moz-placeholder {
+  color: inherit;
+}
+
+.vs__search::-ms-input-placeholder {
+  color: inherit;
+}
+
+.vs__search:-ms-input-placeholder {
+  color: inherit;
+}
+
+.vs__search::placeholder {
+  color: inherit;
+}
+
+/**
+    States
+ */
+
+.vs--unsearchable .vs__search {
+  opacity: 1;
+}
+
+[dir] .vs--unsearchable:not(.vs--disabled) .vs__search:hover {
+  cursor: pointer;
+}
+
+.vs--single.vs--searching:not(.vs--open):not(.vs--loading) .vs__search {
+  opacity: 0.2;
+}
+
+/* Loading Spinner */
+
+.vs__spinner {
+  align-self: center;
+  opacity: 0;
+  font-size: 5px;
+  text-indent: -9999em;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  transition: opacity 0.1s;
+}
+
+[dir] .vs__spinner {
+  border-top: 0.9em solid rgba(100, 100, 100, 0.1);
+  border-bottom: 0.9em solid rgba(100, 100, 100, 0.1);
+          transform: translateZ(0);
+}
+
+[dir=ltr] .vs__spinner {
+  border-right: 0.9em solid rgba(100, 100, 100, 0.1);
+  border-left: 0.9em solid rgba(60, 60, 60, 0.45);
+  -webkit-animation:  vSelectSpinner-ltr 1.1s infinite linear;
+  animation:  vSelectSpinner-ltr 1.1s infinite linear;
+}
+
+[dir=rtl] .vs__spinner {
+  border-left: 0.9em solid rgba(100, 100, 100, 0.1);
+  border-right: 0.9em solid rgba(60, 60, 60, 0.45);
+  -webkit-animation:  vSelectSpinner-rtl 1.1s infinite linear;
+          animation:  vSelectSpinner-rtl 1.1s infinite linear;
+}
+
+.vs__spinner,
+.vs__spinner:after {
+  width: 5em;
+  height: 5em;
+}
+
+[dir] .vs__spinner, [dir] .vs__spinner:after {
+  border-radius: 50%;
+}
+
+/* Loading Spinner States */
+
+.vs--loading .vs__spinner {
+  opacity: 1;
+}
+
+/*=========================================================================================
+    File Name: _charts.scss
+    Description: Styles for charts.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.echarts {
+  width: 100% !important;
+}
+
+/*=========================================================================================
+    File Name: _contextMenu.scss
+    Description: Styles for context menu
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+.v-context {
+  overflow: hidden;
+  z-index: 51000 !important;
+}
+
+[dir] .v-context {
+  padding: 0 !important;
+  border-radius: 0.4rem !important;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14) !important;
+}
+
+.v-context li a {
+  color: inherit !important;
+}
+
+[dir] .v-context li a {
+  padding: 0.7rem 1rem !important;
+}
+
+[dir] .v-context li a:focus, [dir] .v-context li a:hover {
+  background: #eee !important;
+}
+
+[dir] .theme-dark .v-context {
+  background: #262c49 !important;
+}
+
+.theme-dark .v-context li a {
+  color: #c2c6dc !important;
+}
+
+[dir] .theme-dark .v-context li a:focus, [dir] .theme-dark .v-context li a:hover {
+  background: #10163a !important;
+}
+
+/*=========================================================================================
+    File Name: _quillEditor.scss
+    Description: Styles for quill editor externsion.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+.quill-editor .ql-bubble .ql-tooltip {
+  z-index: 51000;
+}
+
+[dir] .theme-dark .quill-editor .ql-snow.ql-toolbar, [dir] .theme-dark .quill-editor .ql-snow.ql-container {
+  border-color: #414561;
+}
+
+/*=========================================================================================
+    File Name: _datePicker.scss
+    Description: Styles for datepicker component.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+.vdp-datepicker input {
+  font-size: 1rem;
+  color: #626262;
+  width: 100%;
+}
+
+[dir] .vdp-datepicker input {
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.vdp-datepicker input[disabled] {
+  opacity: 0.5;
+}
+
+.vdp-datepicker .vdp-datepicker__calendar {
+  z-index: 401;
+}
+
+[dir] .vdp-datepicker .vdp-datepicker__calendar {
+  border-radius: 0.5rem;
+}
+
+[dir=ltr] .vdp-datepicker .vdp-datepicker__calendar header .pre {
+  border-top-left-radius: 0.5rem;
+}
+
+[dir=rtl] .vdp-datepicker .vdp-datepicker__calendar header .pre {
+  border-top-right-radius: 0.5rem;
+}
+
+[dir=ltr] .vdp-datepicker .vdp-datepicker__calendar header .next {
+  border-top-right-radius: 0.5rem;
+}
+
+[dir=rtl] .vdp-datepicker .vdp-datepicker__calendar header .next {
+  border-top-left-radius: 0.5rem;
+}
+
+[dir] .vdp-datepicker .day.blank {
+  background: transparent;
+}
+
+.vdp-datepicker .cell.day {
+  height: 37px;
+  line-height: 37px;
+  width: 12.285714286%;
+}
+
+[dir] .vdp-datepicker .cell.day {
+  border-radius: 50%;
+}
+
+[dir=ltr] .vdp-datepicker .cell.day {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+[dir=rtl] .vdp-datepicker .cell.day {
+  margin-right: 1%;
+  margin-left: 1%;
+}
+
+[dir] .vdp-datepicker .cell.month, [dir] .vdp-datepicker .cell.year {
+  border-radius: 0.5rem;
+}
+
+[dir] .vdp-datepicker .cell:not(.blank):hover {
+  border-color: rgba(0, 0, 0, 0) !important;
+  background-color: #eee;
+}
+
+.vdp-datepicker .cell.day.highlighted {
+  color: #fff;
+}
+
+[dir] .vdp-datepicker .cell.day.highlighted {
+  background: rgba(var(--vs-primary), 0.7);
+}
+
+[dir] .vdp-datepicker .cell.day.highlighted:hover {
+  background: rgba(var(--vs-primary), 1);
+}
+
+.vdp-datepicker .cell.selected {
+  color: #fff;
+}
+
+[dir] .vdp-datepicker .cell.selected {
+  background: rgba(var(--vs-primary), 1) !important;
+}
+
+[dir] .vdp-datepicker .cell.selected:hover {
+  background: rgba(var(--vs-primary), 1);
+}
+
+/*=========================================================================================
+    File Name: _datetimePicker.scss
+    Description: Styles for datetime picker
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+.flatpickr-calendar {
+  width: calc(307.875px + 13px * 2) !important;
+  overflow: hidden;
+}
+
+[dir] .flatpickr-calendar {
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08) !important;
+  border-radius: 0.5rem !important;
+}
+
+.flatpickr-calendar.hasWeeks {
+  width: calc(307.875px + 13px * 2 + 34px) !important;
+}
+
+.flatpickr-calendar.arrowTop:after,
+.flatpickr-calendar.arrowTop:before {
+  display: none;
+}
+
+.flatpickr-calendar.arrowBottom:after,
+.flatpickr-calendar.arrowBottom:before {
+  display: none;
+}
+
+.flatpickr-calendar .numInputWrapper {
+  width: 5.5ch !important;
+}
+
+.flatpickr-calendar .numInputWrapper .numInput.cur-year {
+  font-weight: 600 !important;
+  color: #626262;
+}
+
+[dir] .flatpickr-calendar .numInputWrapper:hover {
+  background: none;
+}
+
+[dir] .flatpickr-calendar .numInputWrapper:hover .arrowUp, [dir] .flatpickr-calendar .numInputWrapper:hover .arrowDown {
+  border: none;
+}
+
+.flatpickr-calendar .flatpickr-months,
+.flatpickr-calendar .flatpickr-month {
+  height: 44px !important;
+}
+
+[dir] .flatpickr-calendar .flatpickr-months {
+  padding: 0;
+}
+
+.flatpickr-calendar .flatpickr-monthDropdown-months {
+  color: #626262;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  height: 27px;
+}
+
+[dir] .flatpickr-calendar .flatpickr-monthDropdown-months {
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+  border-radius: 0.5rem !important;
+}
+
+[dir=ltr] .flatpickr-calendar .flatpickr-monthDropdown-months {
+  margin-left: 22px !important;
+  margin-right: 3px !important;
+}
+
+[dir=rtl] .flatpickr-calendar .flatpickr-monthDropdown-months {
+  margin-right: 22px !important;
+  margin-left: 3px !important;
+}
+
+[dir] .flatpickr-calendar .flatpickr-monthDropdown-months:hover {
+  background: transparent !important;
+}
+
+.flatpickr-calendar .flatpickr-current-month {
+  bottom: -11px;
+}
+
+[dir] .flatpickr-calendar .flatpickr-current-month {
+  padding-top: 0;
+}
+
+.flatpickr-calendar .flatpickr-current-month .numInputWrapper {
+  vertical-align: middle;
+}
+
+[dir] .flatpickr-calendar .flatpickr-prev-month, [dir] .flatpickr-calendar .flatpickr-next-month, [dir] .flatpickr-calendar .flatpickr-innerContainer {
+  padding: 13px !important;
+}
+
+.flatpickr-calendar .flatpickr-prev-month,
+.flatpickr-calendar .flatpickr-next-month {
+  top: calc(13px - 3px) !important;
+}
+
+[dir=ltr] .flatpickr-calendar .flatpickr-prev-month {
+  left: 13px !important;
+}
+
+[dir=rtl] .flatpickr-calendar .flatpickr-prev-month {
+  right: 13px !important;
+}
+
+[dir=ltr] .flatpickr-calendar .flatpickr-next-month {
+  right: 13px !important;
+}
+
+[dir=rtl] .flatpickr-calendar .flatpickr-next-month {
+  left: 13px !important;
+}
+
+.flatpickr-calendar.inline {
+  display: block !important;
+}
+
+.flatpickr-calendar .flatpickr-day.selected,
+.flatpickr-calendar .flatpickr-day.startRange,
+.flatpickr-calendar .flatpickr-day.endRange,
+.flatpickr-calendar .flatpickr-day.selected.inRange,
+.flatpickr-calendar .flatpickr-day.startRange.inRange,
+.flatpickr-calendar .flatpickr-day.endRange.inRange,
+.flatpickr-calendar .flatpickr-day.selected:focus,
+.flatpickr-calendar .flatpickr-day.startRange:focus,
+.flatpickr-calendar .flatpickr-day.endRange:focus,
+.flatpickr-calendar .flatpickr-day.selected:hover,
+.flatpickr-calendar .flatpickr-day.startRange:hover,
+.flatpickr-calendar .flatpickr-day.endRange:hover,
+.flatpickr-calendar .flatpickr-day.selected.prevMonthDay,
+.flatpickr-calendar .flatpickr-day.startRange.prevMonthDay,
+.flatpickr-calendar .flatpickr-day.endRange.prevMonthDay,
+.flatpickr-calendar .flatpickr-day.selected.nextMonthDay,
+.flatpickr-calendar .flatpickr-day.startRange.nextMonthDay,
+.flatpickr-calendar .flatpickr-day.endRange.nextMonthDay {
+  color: #fff;
+}
+
+[dir] .flatpickr-calendar .flatpickr-day.selected, [dir] .flatpickr-calendar .flatpickr-day.startRange, [dir] .flatpickr-calendar .flatpickr-day.endRange, [dir] .flatpickr-calendar .flatpickr-day.selected.inRange, [dir] .flatpickr-calendar .flatpickr-day.startRange.inRange, [dir] .flatpickr-calendar .flatpickr-day.endRange.inRange, [dir] .flatpickr-calendar .flatpickr-day.selected:focus, [dir] .flatpickr-calendar .flatpickr-day.startRange:focus, [dir] .flatpickr-calendar .flatpickr-day.endRange:focus, [dir] .flatpickr-calendar .flatpickr-day.selected:hover, [dir] .flatpickr-calendar .flatpickr-day.startRange:hover, [dir] .flatpickr-calendar .flatpickr-day.endRange:hover, [dir] .flatpickr-calendar .flatpickr-day.selected.prevMonthDay, [dir] .flatpickr-calendar .flatpickr-day.startRange.prevMonthDay, [dir] .flatpickr-calendar .flatpickr-day.endRange.prevMonthDay, [dir] .flatpickr-calendar .flatpickr-day.selected.nextMonthDay, [dir] .flatpickr-calendar .flatpickr-day.startRange.nextMonthDay, [dir] .flatpickr-calendar .flatpickr-day.endRange.nextMonthDay {
+  background: #7367F0 !important;
+  box-shadow: none;
+  border-color: #7367F0 !important;
+}
+
+.flatpickr-input,
+.flatpickr-input[type=hidden] + input {
+  font-size: 1rem;
+  color: #626262;
+}
+
+[dir] .flatpickr-input, [dir] .flatpickr-input[type=hidden] + input {
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+[dir] .flatpickr-input.active {
+  border: 1px solid #7367F0;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  fill: #7367F0 !important;
+}
+
+[dir] .theme-dark .flatpickr-calendar {
+  background: #10163a;
+  border: 1px solid #414561;
+}
+
+.theme-dark .flatpickr-calendar .flatpickr-month,
+.theme-dark .flatpickr-calendar .flatpickr-weekday {
+  color: #fff;
+}
+
+.theme-dark .flatpickr-calendar .flatpickr-prev-month svg,
+.theme-dark .flatpickr-calendar .flatpickr-next-month svg {
+  fill: #fff;
+}
+
+[dir] .theme-dark .flatpickr-calendar .flatpickr-monthDropdown-months {
+  background: #262c49 !important;
+}
+
+.theme-dark .flatpickr-calendar .flatpickr-monthDropdown-months option {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark .flatpickr-calendar .flatpickr-monthDropdown-months option {
+  background: #10163a !important;
+}
+
+.theme-dark .flatpickr-calendar .flatpickr-day {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark .flatpickr-calendar .flatpickr-day.inRange, [dir] .theme-dark .flatpickr-calendar .flatpickr-day.prevMonthDay.inRange, [dir] .theme-dark .flatpickr-calendar .flatpickr-day.nextMonthDay.inRange, [dir] .theme-dark .flatpickr-calendar .flatpickr-day.today.inRange, [dir] .theme-dark .flatpickr-calendar .flatpickr-day.prevMonthDay.today.inRange, [dir] .theme-dark .flatpickr-calendar .flatpickr-day.nextMonthDay.today.inRange, [dir] .theme-dark .flatpickr-calendar .flatpickr-day:hover, [dir] .theme-dark .flatpickr-calendar .flatpickr-day.prevMonthDay:hover, [dir] .theme-dark .flatpickr-calendar .flatpickr-day.nextMonthDay:hover, [dir] .theme-dark .flatpickr-calendar .flatpickr-day:focus, [dir] .theme-dark .flatpickr-calendar .flatpickr-day.prevMonthDay:focus, [dir] .theme-dark .flatpickr-calendar .flatpickr-day.nextMonthDay:focus {
+  background: #262c49;
+  border-color: #262c49;
+}
+
+[dir] .theme-dark .flatpickr-calendar .flatpickr-day.today {
+  border-color: #959ea9;
+}
+
+.theme-dark .flatpickr-calendar .flatpickr-day.selected {
+  color: #fff;
+}
+
+.theme-dark .flatpickr-calendar .flatpickr-day.today:hover,
+.theme-dark .flatpickr-calendar .flatpickr-day.today:focus {
+  color: #fff;
+}
+
+[dir] .theme-dark .flatpickr-calendar .flatpickr-day.today:hover, [dir] .theme-dark .flatpickr-calendar .flatpickr-day.today:focus {
+  background: #262c49;
+}
+
+.theme-dark .flatpickr-calendar .flatpickr-day.prevMonthDay,
+.theme-dark .flatpickr-calendar .flatpickr-day.nextMonthDay,
+.theme-dark .flatpickr-calendar .flatpickr-day.disabled {
+  opacity: 0.3;
+}
+
+[dir] .theme-dark .flatpickr-calendar .flatpickr-time {
+  border-top-color: #414561 !important;
+}
+
+.theme-dark .flatpickr-calendar .flatpickr-time input {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark .flatpickr-calendar .flatpickr-time input:hover, [dir] .theme-dark .flatpickr-calendar .flatpickr-time .flatpickr-am-pm:hover, [dir] .theme-dark .flatpickr-calendar .flatpickr-time input:focus, [dir] .theme-dark .flatpickr-calendar .flatpickr-time .flatpickr-am-pm:focus {
+  background: #262c49;
+}
+
+.theme-dark .flatpickr-calendar .flatpickr-time .flatpickr-am-pm {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark .flatpickr-calendar .flatpickr-time ::-moz-selection {
+  background: transparent;
+}
+
+[dir] .theme-dark .flatpickr-calendar .flatpickr-time ::selection {
+  background: transparent;
+}
+
+[dir] .theme-dark .flatpickr-calendar .numInputWrapper .arrowUp:after {
+  border-bottom-color: #fff;
+}
+
+[dir] .theme-dark .flatpickr-calendar .numInputWrapper .arrowDown:after {
+  border-top-color: #fff;
+}
+
+/*=========================================================================================
+    File Name: _themes.scss
+    Description: partial- themes - imports theme styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _themeDark.scss
+    Description: partial- Styles for dark theme
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.theme-dark {
+  --vs-dark: 184,194,204;
+  color: #c2c6dc !important;
+}
+
+[dir] .theme-dark {
+  background-color: #262c49;
+}
+
+[dir] .theme-dark .main-vertical.navbar-static .vx-navbar-wrapper {
+  background: none;
+}
+
+.theme-dark .main-horizontal .menu-item .h-nav-menu-item.disabled-item {
+  opacity: 0.3;
+}
+
+@media (min-width: 1200px) {
+  [dir] .theme-dark .main-horizontal .vx-navbar-wrapper:not(.nav-menu-wrapper) {
+    background: none !important;
+  }
+}
+
+[dir] .theme-dark .main-horizontal.navbar-sticky .vs-navbar:not(.vx-navbar) {
+  background-color: #262c49 !important;
+}
+
+[dir] .theme-dark .main-horizontal.navbar-static .vs-navbar:not(.vx-navbar).d-theme-dark-light-bg {
+  background-color: #262c49 !important;
+}
+
+.theme-dark .content-area__heading h2 {
+  color: #ebeefd;
+}
+
+.theme-dark code {
+  color: #b8c2cc;
+}
+
+[dir] .theme-dark code {
+  background: #262c49;
+}
+
+[dir] .theme-dark pre[class*=language-] {
+  background-color: #1E1E1E;
+  text-shadow: none;
+}
+
+[dir] .theme-dark pre[class*=language-] code {
+  background-color: transparent;
+}
+
+[dir] .theme-dark pre[class*=language-] code[class*=language-] {
+  text-shadow: none;
+}
+
+.theme-dark label {
+  color: #c2c6dc;
+}
+
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark h4,
+.theme-dark h5,
+.theme-dark h6 {
+  color: #ebeefd;
+}
+
+[dir] .theme-dark ul.bordered-items li {
+  border-color: #414561 !important;
+}
+
+[dir] .theme-dark .notification-dropdown .notification:hover, [dir] .theme-dark .notification-dropdown .cart-item:hover, [dir] .theme-dark .cart-dropdown .notification:hover, [dir] .theme-dark .cart-dropdown .cart-item:hover {
+  background: #10163a;
+}
+
+[dir] .theme-dark .notification-dropdown .checkout-footer, [dir] .theme-dark .notification-dropdown .notification-footer, [dir] .theme-dark .cart-dropdown .checkout-footer, [dir] .theme-dark .cart-dropdown .notification-footer {
+  background-color: #262c49;
+}
+
+[dir] .theme-dark .notification-dropdown .checkout-footer:hover, [dir] .theme-dark .notification-dropdown .notification-footer:hover, [dir] .theme-dark .cart-dropdown .checkout-footer:hover, [dir] .theme-dark .cart-dropdown .notification-footer:hover {
+  background-color: #10163a;
+}
+
+.theme-dark .vs-component.vs-notifications.vs-noti-dark {
+  color: #22292f !important;
+}
+
+[dir] .theme-dark .vs-component.vs-notifications.vs-noti-dark .filling {
+  background: #b8c2cc !important;
+}
+
+.theme-dark .vs-component.vs-notifications.vs-noti-dark h3 {
+  color: #22292f !important;
+}
+
+[dir] .theme-dark .vx-card {
+  background-color: #10163a;
+}
+
+[dir] .theme-dark .vx-card.card-border {
+  border-color: #414561;
+}
+
+.theme-dark .vx-card .vx-card__title h4 {
+  color: #ebeefd;
+}
+
+.theme-dark .vx-card .con-vs-alert-dark {
+  color: #dae1e7;
+}
+
+[dir] .theme-dark .vx-card .code-content pre[class^=language-] {
+  background-color: #262c49;
+  text-shadow: none;
+}
+
+[dir] .theme-dark .vx-card .code-content pre[class^=language-] code {
+  background-color: transparent;
+}
+
+[dir] .theme-dark .vx-card .code-content pre[class^=language-] code[class*=language-] {
+  text-shadow: none;
+}
+
+.theme-dark .vx-card .vx-card__body .con-vs-alert-primary h4 {
+  color: rgba(var(--vs-primary), 1);
+}
+
+.theme-dark .vx-card .vx-card__body .con-vs-alert-success h4 {
+  color: rgba(var(--vs-success), 1);
+}
+
+.theme-dark .vx-card .vx-card__body .con-vs-alert-danger h4 {
+  color: rgba(var(--vs-danger), 1);
+}
+
+.theme-dark .vx-card .vx-card__body .con-vs-alert-info h4 {
+  color: rgba(var(--vs-info), 1);
+}
+
+.theme-dark .vx-card .vx-card__body .con-vs-alert-warning h4 {
+  color: rgba(var(--vs-warning), 1);
+}
+
+[dir] .theme-dark .vx-card .tasks-today-container .tasks-today__task:hover {
+  background: #212744 !important;
+}
+
+[dir] .theme-dark .vx-navbar-wrapper {
+  background: linear-gradient(to bottom, rgba(44, 48, 60, 0.9) 44%, rgba(44, 48, 60, 0.43) 73%, rgba(44, 48, 60, 0) 100%);
+}
+
+[dir] .theme-dark .vx-navbar-wrapper .vs-navbar .search-full-container {
+  background-color: #10163a !important;
+}
+
+[dir] .theme-dark .vx-navbar-wrapper .vs-navbar .search-full-container .vx-auto-suggest input {
+  background: #10163a;
+}
+
+.theme-dark .vx-navbar-wrapper .vs-navbar .vx-auto-suggest .auto-suggest-suggestions-list .auto-suggest__suggestion-group__suggestion {
+  color: #c2c6dc;
+}
+
+.theme-dark .vx-navbar-wrapper .vs-navbar .vx-auto-suggest .auto-suggest-suggestions-list .auto-suggest__suggestion-group__suggestion.vx-auto-suggest__current-selected {
+  color: #fff;
+}
+
+[dir] .theme-dark .vx-navbar-wrapper .vs-navbar .vx-auto-suggest .auto-suggest-suggestions-list .auto-suggest__suggestion-group__suggestion.vx-auto-suggest__current-selected {
+  background: #10163a;
+}
+
+[dir] .theme-dark .v-nav-menu .vs-sidebar {
+  background-color: #10163a;
+}
+
+.theme-dark .v-nav-menu .shadow-bottom {
+  width: 94%;
+}
+
+[dir] .theme-dark .v-nav-menu .shadow-bottom {
+  background: linear-gradient(to bottom, #0f1642 44%, rgba(15, 22, 66, 0.51) 73%, rgba(44, 48, 60, 0) 100%);
+}
+
+.theme-dark .v-nav-menu .scroll-area-v-nav-menu .feather-icon,
+.theme-dark .v-nav-menu .scroll-area-v-nav-menu span:not(.vs-chip--text) {
+  color: #c2c6dc;
+}
+
+.theme-dark .v-nav-menu .scroll-area-v-nav-menu a:not(.router-link-active) .feather-icon svg,
+.theme-dark .v-nav-menu .scroll-area-v-nav-menu a:not(.router-link-active) .feather-icon span {
+  color: #c2c6dc;
+}
+
+.theme-dark .v-nav-menu .scroll-area-v-nav-menu a.router-link-active span {
+  color: #fff;
+}
+
+[dir] .theme-dark .v-nav-menu .scroll-area-v-nav-menu .vs-sidebar-group.vs-sidebar-group-active > .group-header {
+  background: #262c49;
+}
+
+[dir] .theme-dark .v-nav-menu .scroll-area-v-nav-menu .vs-sidebar-group.vs-sidebar-group-open > .group-header {
+  background: #262c49;
+}
+
+[dir] .theme-dark .ps:hover > .ps__scrollbar-y-rail:hover {
+  background-color: #10163a;
+}
+
+[dir] .theme-dark .grid-demo__layout-container .vs-row .vs-col {
+  background-color: #212744;
+}
+
+[dir] .theme-dark .grid-demo__layout-container .vs-row .vs-col:last-of-type {
+  background-color: #212744;
+}
+
+[dir] .theme-dark .grid-demo__layout-container--block .vs-row {
+  background-color: #212744;
+}
+
+[dir] .theme-dark .chat-card-log .flex-row-reverse .msg.chat-sent-msg {
+  background-color: #10163a !important;
+}
+
+[dir] .theme-dark .chat-card-log .msg {
+  background-color: #212744 !important;
+}
+
+[dir] .theme-dark .chat-input-container, [dir] .theme-dark .chat__input {
+  background-color: #10163a !important;
+  border-top: 1px solid #212744;
+}
+
+[dir] .theme-dark #chat-app .chat__profile-search .vs-inputx {
+  border-color: #414561 !important;
+}
+
+[dir] .theme-dark #chat-app #chat-list-sidebar .chat-scroll-area .chat__contact:hover {
+  background: #10163a;
+}
+
+[dir] .theme-dark #chat-app .chat__header header {
+  background: #212744 !important;
+}
+
+.theme-dark #chat-app .chat__header header h6 {
+  color: #ebeefd;
+}
+
+[dir] .theme-dark #chat-app .chat__bg {
+  background-color: #171e49;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%236f76a1' fill-opacity='0.4'%3E%3Cpath d='M24.37 16c.2.65.39 1.32.54 2H21.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06A5 5 0 0 1-17.45 28v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H-20a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1L.9 19.22a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0L2.26 23h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM-13.82 27l16.37 4.91L18.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H-13.1z'/%3E%3Cpath id='path6_fill-copy' d='M284.37 16c.2.65.39 1.32.54 2H281.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06a5 5 0 0 1-2.24-8.94v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H240a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM246.18 27l16.37 4.91L278.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H246.9z'/%3E%3Cpath d='M159.5 21.02A9 9 0 0 0 151 15h-42a9 9 0 0 0-8.5 6.02 6 6 0 0 0 .02 11.96A8.99 8.99 0 0 0 109 45h42a9 9 0 0 0 8.48-12.02 6 6 0 0 0 .02-11.96zM151 17h-42a7 7 0 0 0-6.33 4h54.66a7 7 0 0 0-6.33-4zm-9.34 26a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-7a7 7 0 1 1 0-14h42a7 7 0 1 1 0 14h-9.34zM109 27a9 9 0 0 0-7.48 4H101a4 4 0 1 1 0-8h58a4 4 0 0 1 0 8h-.52a9 9 0 0 0-7.48-4h-42z'/%3E%3Cpath d='M39 115a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm6-8a6 6 0 1 1-12 0 6 6 0 0 1 12 0zm-3-29v-2h8v-6H40a4 4 0 0 0-4 4v10H22l-1.33 4-.67 2h2.19L26 130h26l3.81-40H58l-.67-2L56 84H42v-6zm-4-4v10h2V74h8v-2h-8a2 2 0 0 0-2 2zm2 12h14.56l.67 2H22.77l.67-2H40zm13.8 4H24.2l3.62 38h22.36l3.62-38z'/%3E%3Cpath d='M129 92h-6v4h-6v4h-6v14h-3l.24 2 3.76 32h36l3.76-32 .24-2h-3v-14h-6v-4h-6v-4h-8zm18 22v-12h-4v4h3v8h1zm-3 0v-6h-4v6h4zm-6 6v-16h-4v19.17c1.6-.7 2.97-1.8 4-3.17zm-6 3.8V100h-4v23.8a10.04 10.04 0 0 0 4 0zm-6-.63V104h-4v16a10.04 10.04 0 0 0 4 3.17zm-6-9.17v-6h-4v6h4zm-6 0v-8h3v-4h-4v12h1zm27-12v-4h-4v4h3v4h1v-4zm-6 0v-8h-4v4h3v4h1zm-6-4v-4h-4v8h1v-4h3zm-6 4v-4h-4v8h1v-4h3zm7 24a12 12 0 0 0 11.83-10h7.92l-3.53 30h-32.44l-3.53-30h7.92A12 12 0 0 0 130 126z'/%3E%3Cpath d='M212 86v2h-4v-2h4zm4 0h-2v2h2v-2zm-20 0v.1a5 5 0 0 0-.56 9.65l.06.25 1.12 4.48a2 2 0 0 0 1.94 1.52h.01l7.02 24.55a2 2 0 0 0 1.92 1.45h4.98a2 2 0 0 0 1.92-1.45l7.02-24.55a2 2 0 0 0 1.95-1.52L224.5 96l.06-.25a5 5 0 0 0-.56-9.65V86a14 14 0 0 0-28 0zm4 0h6v2h-9a3 3 0 1 0 0 6H223a3 3 0 1 0 0-6H220v-2h2a12 12 0 1 0-24 0h2zm-1.44 14l-1-4h24.88l-1 4h-22.88zm8.95 26l-6.86-24h18.7l-6.86 24h-4.98zM150 242a22 22 0 1 0 0-44 22 22 0 0 0 0 44zm24-22a24 24 0 1 1-48 0 24 24 0 0 1 48 0zm-28.38 17.73l2.04-.87a6 6 0 0 1 4.68 0l2.04.87a2 2 0 0 0 2.5-.82l1.14-1.9a6 6 0 0 1 3.79-2.75l2.15-.5a2 2 0 0 0 1.54-2.12l-.19-2.2a6 6 0 0 1 1.45-4.46l1.45-1.67a2 2 0 0 0 0-2.62l-1.45-1.67a6 6 0 0 1-1.45-4.46l.2-2.2a2 2 0 0 0-1.55-2.13l-2.15-.5a6 6 0 0 1-3.8-2.75l-1.13-1.9a2 2 0 0 0-2.5-.8l-2.04.86a6 6 0 0 1-4.68 0l-2.04-.87a2 2 0 0 0-2.5.82l-1.14 1.9a6 6 0 0 1-3.79 2.75l-2.15.5a2 2 0 0 0-1.54 2.12l.19 2.2a6 6 0 0 1-1.45 4.46l-1.45 1.67a2 2 0 0 0 0 2.62l1.45 1.67a6 6 0 0 1 1.45 4.46l-.2 2.2a2 2 0 0 0 1.55 2.13l2.15.5a6 6 0 0 1 3.8 2.75l1.13 1.9a2 2 0 0 0 2.5.8zm2.82.97a4 4 0 0 1 3.12 0l2.04.87a4 4 0 0 0 4.99-1.62l1.14-1.9a4 4 0 0 1 2.53-1.84l2.15-.5a4 4 0 0 0 3.09-4.24l-.2-2.2a4 4 0 0 1 .97-2.98l1.45-1.67a4 4 0 0 0 0-5.24l-1.45-1.67a4 4 0 0 1-.97-2.97l.2-2.2a4 4 0 0 0-3.09-4.25l-2.15-.5a4 4 0 0 1-2.53-1.84l-1.14-1.9a4 4 0 0 0-5-1.62l-2.03.87a4 4 0 0 1-3.12 0l-2.04-.87a4 4 0 0 0-4.99 1.62l-1.14 1.9a4 4 0 0 1-2.53 1.84l-2.15.5a4 4 0 0 0-3.09 4.24l.2 2.2a4 4 0 0 1-.97 2.98l-1.45 1.67a4 4 0 0 0 0 5.24l1.45 1.67a4 4 0 0 1 .97 2.97l-.2 2.2a4 4 0 0 0 3.09 4.25l2.15.5a4 4 0 0 1 2.53 1.84l1.14 1.9a4 4 0 0 0 5 1.62l2.03-.87zM152 207a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6 2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-11 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-6 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3-5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-8 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm0 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4 7a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5-2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-5-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-24 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm16 5a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm7-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zm86-29a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1 246 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM275 214a29 29 0 0 0-57.97 0h57.96zM72.33 198.12c-.21-.32-.34-.7-.34-1.12v-12h-2v12a4.01 4.01 0 0 0 7.09 2.54c.57-.69.91-1.57.91-2.54v-12h-2v12a1.99 1.99 0 0 1-2 2 2 2 0 0 1-1.66-.88zM75 176c.38 0 .74-.04 1.1-.12a4 4 0 0 0 6.19 2.4A13.94 13.94 0 0 1 84 185v24a6 6 0 0 1-6 6h-3v9a5 5 0 1 1-10 0v-9h-3a6 6 0 0 1-6-6v-24a14 14 0 0 1 14-14 5 5 0 0 0 5 5zm-17 15v12a1.99 1.99 0 0 0 1.22 1.84 2 2 0 0 0 2.44-.72c.21-.32.34-.7.34-1.12v-12h2v12a3.98 3.98 0 0 1-5.35 3.77 3.98 3.98 0 0 1-.65-.3V209a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4v-24c.01-1.53-.23-2.88-.72-4.17-.43.1-.87.16-1.28.17a6 6 0 0 1-5.2-3 7 7 0 0 1-6.47-4.88A12 12 0 0 0 58 185v6zm9 24v9a3 3 0 1 0 6 0v-9h-6z'/%3E%3Cpath d='M-17 191a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H4zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1-14 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM15 214a29 29 0 0 0-57.97 0h57.96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+[dir] .theme-dark #chat-app .chat__bg .select-none {
+  background-color: #212744 !important;
+}
+
+.theme-dark #chat-app .chat__bg h4 {
+  color: #ebeefd;
+}
+
+[dir] .theme-dark #chat-app .chat__bg h4 {
+  background-color: #212744 !important;
+}
+
+[dir] .theme-dark #chat-app .chat__bg .msg {
+  background-color: #10163a !important;
+  border-color: #dae1e7 !important;
+}
+
+[dir] .theme-dark #chat-app .chat__bg.chat-content-area .chat-content-scroll-area {
+  background: rgba(34, 41, 47, 0.2);
+}
+
+[dir] .theme-dark #chat-app .chat__bg.chat-content-area .chat__log .msg-time .vs-divider--text {
+  background: #10163a !important;
+  border-color: #dae1e7 !important;
+}
+
+[dir] .theme-dark #chat-app .chat__bg .chat__input input {
+  border-color: #414561 !important;
+}
+
+.theme-dark #todo-app .todo-list h6.todo-title {
+  color: #ebeefd;
+}
+
+.theme-dark #todo-app .todo-list .todo-tags .con-vs-chip {
+  color: #c2c6dc !important;
+}
+
+[dir] .theme-dark #todo-app .todo-list .todo-tags .con-vs-chip {
+  background: #10163a;
+}
+
+[dir] .theme-dark #todo-app .list-item-component {
+  border-color: #414561;
+}
+
+[dir] .theme-dark #todo-app .list-item-component:hover {
+  box-shadow: 0px 0 0 0px #1E1E1E;
+}
+
+[dir] .theme-dark #email-app .email__mails .email__mail-item .mail__mail-item {
+  background: #10163a;
+}
+
+[dir=ltr] .theme-dark #email-app .email__mails .email__mail-item .mail__mail-item:hover {
+  box-shadow: 10px 0 0 0px #1E1E1E;
+}
+
+[dir=rtl] .theme-dark #email-app .email__mails .email__mail-item .mail__mail-item:hover {
+  box-shadow: -10px 0 0 0px #1E1E1E;
+}
+
+[dir] .theme-dark #email-app .email__mails .email__mail-item .mail__mail-item.mail__opened-mail {
+  background: #262c49;
+}
+
+[dir] .theme-dark #email-app .email__mails .email__mail-item:not(:first-of-type) .mail__mail-item {
+  border-top: 1px solid #414561;
+}
+
+[dir] .theme-dark #email-app .email-view-sidebar .vs-sidebar {
+  background-color: #212744 !important;
+}
+
+[dir=ltr] .theme-dark #email-app .email-view-sidebar .vs-sidebar {
+  border-left-color: #414561;
+}
+
+[dir=rtl] .theme-dark #email-app .email-view-sidebar .vs-sidebar {
+  border-right-color: #414561;
+}
+
+[dir] .theme-dark #email-app .email-view-sidebar .email-header {
+  border-bottom-color: #414561;
+}
+
+.theme-dark #calendar-app .full-calendar-body .week-row .day-cell.not-cur-month .day-number {
+  color: rgba(255, 255, 255, 0.24);
+}
+
+.theme-dark .vs-alert code {
+  color: #b8c2cc;
+}
+
+[dir] .theme-dark .vs-alert code {
+  background: #262c49;
+}
+
+[dir] .theme-dark .con-vs-avatar {
+  background: #10163a !important;
+}
+
+[dir] .theme-dark .con-vs-avatar.con-vs-avatar-primary {
+  background: rgba(var(--vs-primary), 1) !important;
+}
+
+[dir] .theme-dark .con-vs-avatar.con-vs-avatar-success {
+  background: rgba(var(--vs-success), 1) !important;
+}
+
+[dir] .theme-dark .con-vs-avatar.con-vs-avatar-danger {
+  background: rgba(var(--vs-danger), 1) !important;
+}
+
+[dir] .theme-dark .con-vs-avatar.con-vs-avatar-warning {
+  background: rgba(var(--vs-warning), 1) !important;
+}
+
+[dir] .theme-dark .con-vs-avatar.con-vs-avatar-info {
+  background: rgba(var(--vs-info), 1) !important;
+}
+
+[dir] .theme-dark .con-vs-avatar.con-vs-avatar-dark {
+  background: #b8c2cc !important;
+}
+
+[dir] .theme-dark #profile-page .profile-header .profile-header-nav {
+  background: #10163a !important;
+}
+
+[dir] .theme-dark #faq-page .faq-bg {
+  background-color: #10163a;
+}
+
+.theme-dark .vs-breadcrumb--ol a,
+.theme-dark .vs-breadcrumb--ol .vs-breadcrum--separator {
+  color: #dae1e7;
+}
+
+.theme-dark .con-vs-chip {
+  color: #c2c6dc !important;
+}
+
+[dir] .theme-dark .con-vs-chip {
+  background: #10163a;
+}
+
+[dir] .theme-dark .con-vs-chip.vs-chip-primary {
+  background: rgba(var(--vs-primary), 1);
+}
+
+[dir] .theme-dark .con-vs-chip.vs-chip-success {
+  background: rgba(var(--vs-success), 1);
+}
+
+[dir] .theme-dark .con-vs-chip.vs-chip-danger {
+  background: rgba(var(--vs-danger), 1);
+}
+
+[dir] .theme-dark .con-vs-chip.vs-chip-warning {
+  background: rgba(var(--vs-warning), 1);
+}
+
+[dir] .theme-dark .con-vs-chip.vs-chip-info {
+  background: rgba(var(--vs-info), 1);
+}
+
+[dir] .theme-dark .con-vs-chip.vs-chip-dark {
+  background: rgba(var(--vs-dark), 1);
+}
+
+[dir] .theme-dark .con-vs-chip .con-vs-avatar {
+  background-color: #262c49 !important;
+}
+
+.theme-dark .con-vs-chip.con-color {
+  color: #fff !important;
+}
+
+[dir] .theme-dark .con-chips .con-chips--input {
+  background-color: #262c49;
+}
+
+[dir] .theme-dark .vs-divider .vs-divider-border {
+  border-color: #414561 !important;
+}
+
+[dir] .theme-dark .vs-divider .vs-divider-border.vs-divider-border-primary {
+  border-color: rgba(var(--vs-primary), 1) !important;
+}
+
+[dir] .theme-dark .vs-divider .vs-divider-border.vs-divider-border-success {
+  border-color: rgba(var(--vs-success), 1) !important;
+}
+
+[dir] .theme-dark .vs-divider .vs-divider-border.vs-divider-border-danger {
+  border-color: rgba(var(--vs-danger), 1) !important;
+}
+
+[dir] .theme-dark .vs-divider .vs-divider-border.vs-divider-border-warning {
+  border-color: rgba(var(--vs-warning), 1) !important;
+}
+
+[dir] .theme-dark .vs-divider .vs-divider-border.vs-divider-border-info {
+  border-color: rgba(var(--vs-info), 1) !important;
+}
+
+[dir] .theme-dark .vs-divider .vs-divider-border.vs-divider-border-dark {
+  border-color: rgba(184, 194, 204, 0.5) !important;
+}
+
+[dir] .theme-dark .vs-dropdown--menu, [dir] .theme-dark .vs-dropdown--menu--after {
+  background: #262c49;
+  border-color: #414561;
+}
+
+[dir] .theme-dark .vs-dropdown--menu .con-dropdown--group-ul, [dir] .theme-dark .vs-dropdown--menu--after .con-dropdown--group-ul {
+  background: #262c49;
+}
+
+.theme-dark .vs-dropdown--menu .vs-dropdown--item .vs-dropdown--item-link.disabled,
+.theme-dark .vs-dropdown--menu--after .vs-dropdown--item .vs-dropdown--item-link.disabled {
+  color: #b8c2cc !important;
+}
+
+[dir] .theme-dark .con-vs-loading {
+  background: rgba(16, 22, 58, 0.6);
+}
+
+.theme-dark .con-vs-loading h4.title-loading {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark .vs-list .vs-list--header {
+  box-shadow: 0 7px 7px -5px #0c112e;
+}
+
+[dir] .theme-dark .vs-list .vs-list--item {
+  border-color: rgba(194, 198, 220, 0.08);
+}
+
+[dir] .theme-dark .vs-navbar {
+  border-color: #262c49;
+}
+
+.theme-dark .vs-navbar li.vs-navbar--item a {
+  color: #dae1e7;
+}
+
+.theme-dark .vs-navbar li.vs-navbar--item.is-active-item a {
+  color: #fff;
+}
+
+[dir] .theme-dark .vs-navbar.vs-navbar-color-transparent:not(.vs-navbar-flat) {
+  background-color: #10163a !important;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+[dir] .theme-dark .vs-pagination--nav .vs-pagination--ul {
+  background: #10163a;
+}
+
+.theme-dark .vs-pagination--nav .vs-pagination--ul .vs-pagination--li {
+  color: #c2c6dc;
+}
+
+.theme-dark .vs-pagination--nav .vs-pagination--ul .item-pagination.is-current {
+  color: #fff;
+}
+
+.theme-dark .vs-pagination--nav .vs-pagination--buttons {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark .vs-pagination--nav .vs-pagination--buttons {
+  background: #10163a;
+}
+
+.theme-dark .con-vs-popup .vs-popup {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark .con-vs-popup .vs-popup {
+  background: #262c49 !important;
+}
+
+[dir] .theme-dark .con-vs-popup .vs-popup .vs-popup--header {
+  background: #10163a !important;
+}
+
+.theme-dark .con-vs-popup .vs-popup .vs-popup--header .vs-popup--close {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark .con-vs-popup .vs-popup .vs-popup--header .vs-popup--close {
+  background: #262c49 !important;
+}
+
+[dir] .theme-dark #popup-demo .demo-alignment .vs-button {
+  background: #262c49 !important;
+}
+
+[dir] .theme-dark #popup-demo .demo-alignment .vs-button:hover {
+  box-shadow: #262c49 0px 8px 25px -8px !important;
+}
+
+[dir] .theme-dark .vs-sidebar {
+  background: #10163a;
+}
+
+.theme-dark .vs-sidebar h4,
+.theme-dark .vs-sidebar h5 {
+  color: #ebeefd;
+}
+
+[dir] .theme-dark .vs-sidebar .vs-sidebar--header {
+  border-bottom-color: #414561;
+}
+
+.theme-dark .vs-sidebar .vs-sidebar--items .vs-sidebar--item a {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark .vs-sidebar .vs-sidebar-group.vs-sidebar-group-active > .group-header {
+  background: #262c49;
+}
+
+[dir] .theme-dark .con-vs-slider .vs-slider {
+  background: rgba(38, 44, 73, 0.5);
+}
+
+.theme-dark .ul-tabs .vs-tabs--li button {
+  color: #c2c6dc;
+}
+
+.theme-dark .vs-tabs-dark .activeChild button,
+.theme-dark .vs-tabs-dark button:not(:disabled):hover {
+  color: #b8c2cc !important;
+}
+
+[dir] .theme-dark .vs-tabs-dark .line-vs-tabs {
+  box-shadow: 0 0 8px 0 rgba(184, 194, 204, 0.4) !important;
+}
+
+[dir=ltr] .theme-dark .vs-tabs-dark .line-vs-tabs {
+  background: linear-gradient(30deg, #b8c2cc, rgba(184, 194, 204, 0.5)) !important;
+}
+
+[dir=rtl] .theme-dark .vs-tabs-dark .line-vs-tabs {
+  background: linear-gradient(-30deg, #b8c2cc, rgba(184, 194, 204, 0.5)) !important;
+}
+
+[dir] .theme-dark .vs-tooltip.vs-tooltip-dark {
+  background: #262c49;
+}
+
+[dir] .theme-dark .con-upload .con-input-upload, [dir] .theme-dark .con-upload .con-img-upload {
+  background-color: #262c49;
+}
+
+[dir] .theme-dark .con-upload .btn-upload-all {
+  background-color: #10163a;
+}
+
+[dir] .theme-dark .con-upload .con-input-upload {
+  border-color: #414561;
+}
+
+.theme-dark input {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark input {
+  background: #10163a;
+}
+
+.theme-dark input ~ .vs-placeholder-label,
+.theme-dark input ~ .vs-input--placeholder {
+  color: #c2c6dc;
+}
+
+.theme-dark ::-moz-placeholder {
+  color: #c2c6dc !important;
+}
+
+.theme-dark ::-ms-input-placeholder {
+  color: #c2c6dc !important;
+}
+
+.theme-dark :-ms-input-placeholder {
+  color: #c2c6dc !important;
+}
+
+.theme-dark ::placeholder {
+  color: #c2c6dc !important;
+}
+
+.theme-dark .vs-input--icon {
+  color: #c2c6dc;
+}
+
+[dir=ltr] .theme-dark .vs-input--icon {
+  border-right-color: rgba(194, 198, 220, 0.2);
+}
+
+[dir=rtl] .theme-dark .vs-input--icon {
+  border-left-color: rgba(194, 198, 220, 0.2);
+}
+
+[dir=ltr] .theme-dark .vs-input--icon.icon-after {
+  border-left-color: rgba(194, 198, 220, 0.2);
+}
+
+[dir=rtl] .theme-dark .vs-input--icon.icon-after {
+  border-right-color: rgba(194, 198, 220, 0.2);
+}
+
+[dir] .theme-dark .vs-input-number {
+  background: #262c49;
+}
+
+.theme-dark .vs-input-number button.vs-input-number--button-less:disabled,
+.theme-dark .vs-input-number button.vs-input-number--button-less.limit,
+.theme-dark .vs-input-number button.vs-input-number--button-plus:disabled,
+.theme-dark .vs-input-number button.vs-input-number--button-plus.limit {
+  opacity: 0.75;
+}
+
+[dir] .theme-dark .vs-input-number button.vs-input-number--button-less:disabled, [dir] .theme-dark .vs-input-number button.vs-input-number--button-less.limit, [dir] .theme-dark .vs-input-number button.vs-input-number--button-plus:disabled, [dir] .theme-dark .vs-input-number button.vs-input-number--button-plus.limit {
+  background: #b8c2cc;
+}
+
+.theme-dark .vs-con-textarea {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark .vs-con-textarea {
+  background: #262c49;
+}
+
+.theme-dark .vs-con-textarea .vs-textarea {
+  color: #c2c6dc;
+}
+
+[dir] .theme-dark .vs-con-textarea .vs-textarea:focus {
+  border-color: transparent;
+}
+
+[dir] .theme-dark .vs-con-textarea.focusx {
+  border-color: transparent;
+}
+
+[dir] .theme-dark .vs-con-textarea.focusx h4 {
+  background: transparent;
+}
+
+.theme-dark .vs-con-textarea.textarea-danger .vs-textarea {
+  color: rgba(var(--vs-danger), 1);
+}
+
+[dir] .theme-dark .vs-switch {
+  background: #262c49;
+}
+
+[dir] .theme-dark .vs-switch.vs-switch-primary.vs-switch-active {
+  background: rgba(var(--vs-primary), 1);
+}
+
+[dir] .theme-dark .vs-switch.vs-switch-success.vs-switch-active {
+  background: rgba(var(--vs-success), 1);
+}
+
+[dir] .theme-dark .vs-switch.vs-switch-danger.vs-switch-active {
+  background: rgba(var(--vs-danger), 1);
+}
+
+[dir] .theme-dark .vs-switch.vs-switch-warning.vs-switch-active {
+  background: rgba(var(--vs-warning), 1);
+}
+
+[dir] .theme-dark .vs-switch.vs-switch-info.vs-switch-active {
+  background: rgba(var(--vs-info), 1);
+}
+
+[dir] .theme-dark .vs-switch.vs-switch-dark.vs-switch-active {
+  background: #b8c2cc;
+}
+
+[dir] .theme-dark .vs-radio-dark .vs-radio--circle {
+  background: #b8c2cc;
+  box-shadow: 0 3px 12px 0 rgba(184, 194, 204, 0.4);
+}
+
+[dir=ltr] .theme-dark .op-block {
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.1);
+}
+
+[dir=rtl] .theme-dark .op-block {
+  box-shadow: -1px 1px 10px rgba(255, 255, 255, 0.1);
+}
+
+[dir] .theme-dark .vs-input-dark .vs-input--input:focus {
+  border-color: #b8c2cc !important;
+}
+
+.theme-dark .vs-input-dark .vs-input--input:focus ~ .vs-input--placeholder {
+  color: #b8c2cc;
+}
+
+[dir] .theme-dark .vue-form-wizard .wizard-icon-circle {
+  background: #262c49;
+  border-color: #212744;
+}
+
+.theme-dark .vue-form-wizard .wizard-nav-pills > li > a {
+  color: #fff;
+}
+
+.theme-dark .vue-form-wizard .wizard-nav-pills > li > a .stepTitle {
+  color: #dae1e7;
+}
+
+.theme-dark .vue-form-wizard .wizard-nav-pills > li > a:hover {
+  color: #fff;
+}
+
+.theme-dark .vue-form-wizard .wizard-navigation .wizard-nav .stepTitle {
+  color: #dae1e7;
+}
+
+[dir] .theme-dark .vs-con-table .vs-con-tbody {
+  background: #212744;
+  border: 2px solid #262c49;
+}
+
+[dir] .theme-dark .vs-con-table .vs-con-tbody .vs-table--tbody-table tr {
+  background: #262c49;
+}
+
+[dir] .theme-dark .vs-con-table .vs-con-tbody .vs-table--tbody-table .vs-table--thead tr {
+  background: #212744;
+}
+
+[dir] .theme-dark .vs-con-table .con-edit-td {
+  background: #212744;
+}
+
+[dir] .theme-dark .vs-con-table .is-selected .tr-values {
+  background: #212744 !important;
+}
+
+[dir] .theme-dark .apexcharts-canvas .apexcharts-tooltip.light {
+  background: #212744;
+  border-color: #262c49;
+}
+
+[dir] .theme-dark .apexcharts-canvas .apexcharts-tooltip.light .apexcharts-tooltip-title {
+  background: #212744;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-xaxistooltip {
+  color: #fff;
+}
+
+[dir] .theme-dark .apexcharts-canvas .apexcharts-xaxistooltip {
+  background: #212744;
+  border-color: #262c49;
+}
+
+[dir] .theme-dark .apexcharts-canvas .apexcharts-xaxistooltip:before, [dir] .theme-dark .apexcharts-canvas .apexcharts-xaxistooltip:after {
+  border-bottom-color: #212744;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-yaxistooltip {
+  color: #fff;
+}
+
+[dir] .theme-dark .apexcharts-canvas .apexcharts-yaxistooltip {
+  background: #212744;
+  border-color: #262c49;
+}
+
+[dir=ltr] .theme-dark .apexcharts-canvas .apexcharts-yaxistooltip:before, [dir=ltr] .theme-dark .apexcharts-canvas .apexcharts-yaxistooltip:after {
+  border-left-color: #212744;
+}
+
+[dir=rtl] .theme-dark .apexcharts-canvas .apexcharts-yaxistooltip:before, [dir=rtl] .theme-dark .apexcharts-canvas .apexcharts-yaxistooltip:after {
+  border-right-color: #212744;
+}
+
+.theme-dark .apexcharts-canvas text {
+  fill: #fff !important;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-pie-series path {
+  stroke: #262c49;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-legend .apexcharts-legend-series .apexcharts-legend-text {
+  color: #b8c2cc !important;
+}
+
+[dir] .theme-dark .apexcharts-canvas .apexcharts-toolbar .apexcharts-menu {
+  background: #262c49;
+  border-color: #262c49;
+}
+
+[dir] .theme-dark .apexcharts-canvas .apexcharts-toolbar .apexcharts-menu .apexcharts-menu-item {
+  background: #212744;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-radar-series polygon {
+  fill: #262c49;
+  stroke: #212744;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-track path {
+  stroke: #262c49;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-selection-icon:not(.selected):hover svg,
+.theme-dark .apexcharts-canvas .apexcharts-zoom-icon:not(.selected):hover svg,
+.theme-dark .apexcharts-canvas .apexcharts-zoom-in-icon:hover svg,
+.theme-dark .apexcharts-canvas .apexcharts-zoom-out-icon:hover svg,
+.theme-dark .apexcharts-canvas .apexcharts-reset-zoom-icon:hover svg,
+.theme-dark .apexcharts-canvas .apexcharts-menu-icon:hover svg {
+  fill: #fff;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-gridline {
+  stroke: #414561;
+}
+
+[dir] .theme-dark .token.operator, [dir] .theme-dark .token.entity, [dir] .theme-dark .token.url, [dir] .theme-dark .language-css .token.string, [dir] .theme-dark .style .token.string {
+  background: transparent;
+}
+
+[dir] .theme-dark .search-tab-filter {
+  background: #10163a;
+}
+
+[dir] .theme-dark .vs-select--options {
+  background: #10163a;
+  border-color: rgba(184, 194, 204, 0.2);
+}
+
+.theme-dark .vs-select--options span {
+  color: #c2c6dc;
+}
+
+.theme-dark .vs-select--options .vs-select--item {
+  color: #b8c2cc;
+}
+
+[dir] .theme-dark .vs-select--options .vs-select--item {
+  border-color: rgba(184, 194, 204, 0.2);
+  box-shadow: none;
+}
+
+[dir] .theme-dark .vs-select--options .vs-select--item:hover {
+  background: #262c49;
+}
+
+.theme-dark .quill-editor .ql-toolbar button {
+  color: #fff;
+}
+
+.theme-dark .quill-editor .ql-toolbar button svg path {
+  stroke: #fff;
+}
+
+.theme-dark .quill-editor .ql-toolbar .ql-fill {
+  fill: #fff;
+}
+
+.theme-dark .quill-editor .ql-toolbar .ql-stroke {
+  stroke: #fff;
+}
+
+.theme-dark .quill-editor .ql-toolbar .ql-picker {
+  color: #fff;
+}
+
+[dir] .theme-dark .quill-editor .ql-toolbar .ql-picker .ql-picker-options {
+  background: #10163a;
+}
+
+.theme-dark .quill-editor .ql-editor.ql-blank::before {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+[dir] .theme-dark .activity-timeline {
+  border-color: #414561;
+}
+
+[dir] .theme-dark .vdp-datepicker .vdp-datepicker__calendar {
+  background: #262c49;
+  border-color: #414561;
+}
+
+[dir] .theme-dark .vdp-datepicker .vdp-datepicker__calendar header .prev:not(.disabled):hover, [dir] .theme-dark .vdp-datepicker .vdp-datepicker__calendar header .next:not(.disabled):hover, [dir] .theme-dark .vdp-datepicker .vdp-datepicker__calendar header .up:not(.disabled):hover {
+  background: #10163a;
+}
+
+.theme-dark .vdp-datepicker .vdp-datepicker__calendar .disabled {
+  color: rgba(184, 194, 204, 0.6);
+}
+
+[dir] .theme-dark .vdp-datepicker .vdp-datepicker__calendar .cell .highlighted {
+  background: #10163a;
+}
+
+[dir] .theme-dark .vdp-datepicker .vdp-datepicker__calendar .cell:hover {
+  background-color: #10163a;
+}
+
+[dir] .theme-dark .vdp-datepicker input {
+  border: 0;
+  padding: 10px;
+}
+
+[dir] .theme-dark .vs-collapse.shadow {
+  box-shadow: 0 0px 10px 1px #0c112e !important;
+}
+
+[dir] .theme-dark .vs-collapse .vs-collapse-item {
+  border-bottom-color: rgba(255, 255, 255, 0.04);
+}
+
+[dir] .theme-dark .vs-collapse.border {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[dir] .theme-dark .vs-collapse.border .vs-collapse-item {
+  border-bottom-color: rgba(255, 255, 255, 0.04);
+}
+
+[dir] .theme-dark .vs-collapse.margin .vs-collapse-item {
+  box-shadow: 0 2px 10px 0 #0c112e;
+}
+
+[dir] .theme-dark .vx-auto-suggest .auto-suggest-suggestions-list {
+  background-color: #262c49 !important;
+}
+
+.theme-dark .footer-sticky .the-footer {
+  color: #fff !important;
+}
+
+[dir] .theme-dark .footer-sticky .the-footer {
+  background-color: #10163a;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog {
+  color: #fff;
+}
+
+[dir] .theme-dark .con-vs-dialog .vs-dialog {
+  background: #262c49;
+}
+
+[dir] .theme-dark .con-vs-dialog .vs-dialog header {
+  background: #10163a;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog header .con-title-after h3 {
+  color: #fff;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog header .vs-dialog-cancel,
+.theme-dark .con-vs-dialog .vs-dialog header .vs-icon {
+  color: #fff;
+}
+
+[dir] .theme-dark .con-vs-dialog .vs-dialog header .vs-dialog-cancel, [dir] .theme-dark .con-vs-dialog .vs-dialog header .vs-icon {
+  background: #262c49;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog footer .vs-button--text {
+  color: #fff;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog .vs-dialog-text .date-label {
+  color: #fff;
+}
+
+[dir] .theme-dark .con-vs-dialog .vs-dialog input, [dir] .theme-dark .con-vs-dialog .vs-dialog .vs-con-textarea {
+  background: #10163a;
+}
+
+[dir] .theme-dark .con-vs-dialog .vs-dialog .con-upload .con-input-upload, [dir] .theme-dark .con-vs-dialog .vs-dialog .con-upload .con-img-upload {
+  background: #10163a;
+}
+
+[dir] .theme-dark .con-vs-dialog .vs-dialog .quill-editor {
+  background: #262c49;
+}
+
+[dir] .theme-dark .tree-container {
+  border-color: #414561;
+}
+
+[dir] .theme-dark .tree-container .tag, [dir] .theme-dark .tree-container .search-input {
+  border-color: #414561;
+}
+
+[dir] .theme-dark .halo-tree .node-title:hover {
+  background-color: #262c49;
+}
+
+[dir] .theme-dark #theme-customizer input {
+  background: #262c49;
+}
+
+[dir] .theme-dark .add-new-data-sidebar input {
+  background: #262c49;
+}
+
+[dir] .theme-dark .vx-card .vs-pagination--nav .vs-pagination--ul {
+  background: #262c49;
+}
+
+.theme-dark .vx-card .vs-pagination--nav .vs-pagination--ul .vs-pagination--li {
+  color: #fff;
+}
+
+.theme-dark .vx-card .vs-pagination--nav .vs-pagination--buttons {
+  color: #fff;
+}
+
+[dir] .theme-dark .vx-card .vs-pagination--nav .vs-pagination--buttons {
+  background: #262c49;
+}
+
+[dir] .theme-dark .vx-card .con-vs-avatar {
+  background: #262c49 !important;
+}
+
+[dir] .theme-dark .vx-card .con-vs-avatar.con-vs-avatar-primary {
+  background: rgba(var(--vs-primary), 1) !important;
+}
+
+[dir] .theme-dark .vx-card .con-vs-avatar.con-vs-avatar-success {
+  background: rgba(var(--vs-success), 1) !important;
+}
+
+[dir] .theme-dark .vx-card .con-vs-avatar.con-vs-avatar-danger {
+  background: rgba(var(--vs-danger), 1) !important;
+}
+
+[dir] .theme-dark .vx-card .con-vs-avatar.con-vs-avatar-warning {
+  background: rgba(var(--vs-warning), 1) !important;
+}
+
+[dir] .theme-dark .vx-card .con-vs-avatar.con-vs-avatar-info {
+  background: rgba(var(--vs-info), 1) !important;
+}
+
+[dir] .theme-dark .vx-card .con-vs-avatar.con-vs-avatar-dark {
+  background: #b8c2cc !important;
+}
+
+[dir] .theme-dark .vx-card .con-vs-chip {
+  background: #262c49;
+}
+
+[dir] .theme-dark .vx-card .con-vs-chip.vs-chip-primary {
+  background: rgba(var(--vs-primary), 1);
+}
+
+[dir] .theme-dark .vx-card .con-vs-chip.vs-chip-success {
+  background: rgba(var(--vs-success), 1);
+}
+
+[dir] .theme-dark .vx-card .con-vs-chip.vs-chip-danger {
+  background: rgba(var(--vs-danger), 1);
+}
+
+[dir] .theme-dark .vx-card .con-vs-chip.vs-chip-warning {
+  background: rgba(var(--vs-warning), 1);
+}
+
+[dir] .theme-dark .vx-card .con-vs-chip.vs-chip-info {
+  background: rgba(var(--vs-info), 1);
+}
+
+[dir] .theme-dark .vx-card .con-vs-chip.vs-chip-dark {
+  background: rgba(var(--vs-dark), 1);
+}
+
+[dir] .theme-dark .vx-card .con-vs-chip .con-vs-avatar {
+  background-color: #10163a !important;
+}
+
+[dir] .theme-dark .vx-card .con-chips .con-chips--input {
+  background-color: #10163a !important;
+}
+
+[dir] .theme-dark .vx-card .vs-navbar.vs-navbar-color-transparent {
+  background-color: #262c49 !important;
+}
+
+[dir] .theme-dark .vx-card .vs-navbar .vs-navbar--btn-responsive .btn-responsive-line {
+  background: #c2c6dc;
+}
+
+[dir] .theme-dark .vx-card .vs-navbar-border {
+  border-color: #414561;
+}
+
+[dir] .theme-dark .vx-card .vs-navbar-border .vs-navbar--item {
+  border-color: #414561;
+}
+
+[dir] .theme-dark .vx-card .vs-navbar-shadow .vs-navbar--item.is-active-item {
+  background-color: #10163a;
+}
+
+[dir] .theme-dark .vx-card input {
+  background: #262c49;
+}
+
+.theme-dark .vdp-datepicker .vdp-datepicker__calendar header .prev:after {
+  border-right-color: #fff;
+}
+
+.theme-dark .vdp-datepicker .vdp-datepicker__calendar header .next:after {
+  border-left-color: #fff;
+}
+
+/*=========================================================================================
+    File Name: _themeSemiDark.scss
+    Description: partial- Styles for semi dark theme
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+[dir] .theme-semi-dark .v-nav-menu .vs-sidebar {
+  background-color: #10163a;
+}
+
+.theme-semi-dark .v-nav-menu .shadow-bottom {
+  width: 94%;
+}
+
+[dir] .theme-semi-dark .v-nav-menu .shadow-bottom {
+  background: linear-gradient(to bottom, #0f1642 44%, rgba(15, 22, 66, 0.51) 73%, rgba(44, 48, 60, 0) 100%);
+}
+
+.theme-semi-dark .v-nav-menu .scroll-area-v-nav-menu .feather-icon,
+.theme-semi-dark .v-nav-menu .scroll-area-v-nav-menu span {
+  color: #fff;
+}
+
+.theme-semi-dark .v-nav-menu .scroll-area-v-nav-menu a .feather-icon svg,
+.theme-semi-dark .v-nav-menu .scroll-area-v-nav-menu a .feather-icon span {
+  color: #fff;
+}
+
+[dir] .theme-semi-dark .v-nav-menu .scroll-area-v-nav-menu .vs-sidebar-group.vs-sidebar-group-open > .group-header {
+  background: #262c49;
+}
+
+[dir] .theme-semi-dark .v-nav-menu .scroll-area-v-nav-menu .vs-sidebar-group.vs-sidebar-group-active > .group-header {
+  background: #262c49;
+}
+
+[dir] .theme-semi-dark .v-nav-menu .scroll-area-v-nav-menu .con-vs-chip {
+  box-shadow: 0px 0px 4px 2px #262c49;
+}
+
+/*=========================================================================================
+    File Name: _transitions.scss
+    Description: Transition styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.zoom-fade-enter-active,
+.zoom-fade-leave-active {
+  transition: transform 0.35s, opacity 0.28s ease-in-out;
+}
+
+.zoom-fade-enter {
+  -webkit-transform: scale(0.97);
+  opacity: 0;
+}
+
+[dir] .zoom-fade-enter {
+          transform: scale(0.97);
+}
+
+.zoom-fade-leave-to {
+  -webkit-transform: scale(1.03);
+  opacity: 0;
+}
+
+[dir] .zoom-fade-leave-to {
+          transform: scale(1.03);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.28s ease-in-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: opacity 0.35s, transform 0.4s;
+}
+
+.slide-fade-enter {
+  opacity: 0;
+}
+
+[dir=ltr] .slide-fade-enter {
+  transform: translateX(-30%);
+}
+
+[dir=rtl] .slide-fade-enter {
+  transform: translateX(30%);
+}
+
+.slide-fade-leave-to {
+  opacity: 0;
+}
+
+[dir=ltr] .slide-fade-leave-to {
+  transform: translateX(30%);
+}
+
+[dir=rtl] .slide-fade-leave-to {
+  transform: translateX(-30%);
+}
+
+.zoom-out-enter-active,
+.zoom-out-leave-active {
+  transition: opacity 0.35s ease-in-out, transform 0.45s ease-out;
+}
+
+.zoom-out-enter,
+.zoom-out-leave-to {
+  opacity: 0;
+  -webkit-transform: scale(0);
+}
+
+[dir] .zoom-out-enter, [dir] .zoom-out-leave-to {
+          transform: scale(0);
+}
+
+.fade-bottom-enter-active,
+.fade-bottom-leave-active {
+  transition: opacity 0.3s, transform 0.35s;
+}
+
+.fade-bottom-enter {
+  opacity: 0;
+  -webkit-transform: translateY(-8%);
+}
+
+[dir] .fade-bottom-enter {
+          transform: translateY(-8%);
+}
+
+.fade-bottom-leave-to {
+  opacity: 0;
+  -webkit-transform: translateY(8%);
+}
+
+[dir] .fade-bottom-leave-to {
+          transform: translateY(8%);
+}
+
+.fade-bottom-2x-enter-active,
+.fade-bottom-2x-leave-active {
+  transition: opacity 0.2s, transform 0.25s;
+}
+
+.fade-bottom-2x-enter {
+  opacity: 0;
+  -webkit-transform: translateY(-4%);
+}
+
+[dir] .fade-bottom-2x-enter {
+          transform: translateY(-4%);
+}
+
+.fade-bottom-2x-leave-to {
+  opacity: 0;
+  -webkit-transform: translateY(4%);
+}
+
+[dir] .fade-bottom-2x-leave-to {
+          transform: translateY(4%);
+}
+
+.fade-top-enter-active,
+.fade-top-leave-active {
+  transition: opacity 0.3s, transform 0.35s;
+}
+
+.fade-top-enter {
+  opacity: 0;
+  -webkit-transform: translateY(8%);
+}
+
+[dir] .fade-top-enter {
+          transform: translateY(8%);
+}
+
+.fade-top-leave-to {
+  opacity: 0;
+  -webkit-transform: translateY(-8%);
+}
+
+[dir] .fade-top-leave-to {
+          transform: translateY(-8%);
+}
+
+.fade-top-2x-enter-active,
+.fade-top-2x-leave-active {
+  transition: opacity 0.2s, transform 0.25s;
+}
+
+.fade-top-2x-enter {
+  opacity: 0;
+  -webkit-transform: translateY(4%);
+}
+
+[dir] .fade-top-2x-enter {
+          transform: translateY(4%);
+}
+
+.fade-top-2x-leave-to {
+  opacity: 0;
+  -webkit-transform: translateY(-4%);
+}
+
+[dir] .fade-top-2x-leave-to {
+          transform: translateY(-4%);
+}
+
+.list-leave-active {
+  position: absolute;
+}
+
+.list-enter,
+.list-leave-to {
+  opacity: 0;
+}
+
+[dir=ltr] .list-enter, [dir=ltr] .list-leave-to {
+  transform: translateX(30px);
+}
+
+[dir=rtl] .list-enter, [dir=rtl] .list-leave-to {
+  transform: translateX(-30px);
+}
+
+.list-enter-up-leave-active {
+  transition: none !important;
+}
+
+.list-enter-up-enter {
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+}
+
+[dir] .list-enter-up-enter {
+          transform: translateY(30px);
+}
+
+/*=========================================================================================
+  File Name: _customClasses.scss
+  Description: partial- this file containes custom helper classes
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+[dir] .btn-group button {
+  padding: 1rem 1.25rem !important;
+}
+
+[dir=ltr] .btn-group :not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+[dir=rtl] .btn-group :not(:last-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+[dir=ltr] .btn-group :not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+[dir=rtl] .btn-group :not(:first-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group-vertical {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.btn-group-vertical button {
+  width: 100%;
+}
+
+[dir] .btn-group-vertical button {
+  padding: 1rem 1.25rem !important;
+}
+
+[dir=ltr] .btn-group-vertical :not(:first-child) {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+[dir=rtl] .btn-group-vertical :not(:first-child) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+[dir=ltr] .btn-group-vertical :not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+[dir=rtl] .btn-group-vertical :not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.blur-1 {
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+.blur-2 {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
+.blur-3 {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.con-vs-chip.number {
+  min-height: 20px;
+  min-width: 20px;
+}
+
+[dir=ltr] .con-vs-chip.number {
+  padding-right: unset;
+  margin-right: 0;
+}
+
+[dir=rtl] .con-vs-chip.number {
+  padding-left: unset;
+  margin-left: 0;
+}
+
+.con-vs-chip.number .vs-chip--text {
+  font-weight: 600;
+}
+
+[dir=ltr] .con-vs-chip.number .vs-chip--text {
+  margin-left: unset;
+  margin-right: unset;
+}
+
+[dir=rtl] .con-vs-chip.number .vs-chip--text {
+  margin-right: unset;
+  margin-left: unset;
+}
+
+.text-primary {
+  color: rgba(var(--vs-primary), 1) !important;
+}
+
+.text-success {
+  color: rgba(var(--vs-success), 1) !important;
+}
+
+.text-danger {
+  color: rgba(var(--vs-danger), 1) !important;
+}
+
+.text-warning {
+  color: rgba(var(--vs-warning), 1) !important;
+}
+
+.text-dark {
+  color: rgba(var(--vs-dark), 1) !important;
+}
+
+[dir] .bg-primary {
+  background-color: rgba(var(--vs-primary), 1) !important;
+}
+
+[dir] .bg-success {
+  background-color: rgba(var(--vs-success), 1) !important;
+}
+
+[dir] .bg-danger {
+  background-color: rgba(var(--vs-danger), 1) !important;
+}
+
+[dir] .bg-warning {
+  background-color: rgba(var(--vs-warning), 1) !important;
+}
+
+[dir] .bg-dark {
+  background-color: rgba(var(--vs-dark), 1) !important;
+}
+
+[dir] .border-primary {
+  border-color: rgba(var(--vs-primary), 1) !important;
+}
+
+[dir] .border-success {
+  border-color: rgba(var(--vs-success), 1) !important;
+}
+
+[dir] .border-danger {
+  border-color: rgba(var(--vs-danger), 1) !important;
+}
+
+[dir] .border-warning {
+  border-color: rgba(var(--vs-warning), 1) !important;
+}
+
+[dir] .border-dark {
+  border-color: rgba(var(--vs-dark), 1) !important;
+}
+
+[dir] .hover\:bg-primary:hover {
+  background-color: rgba(var(--vs-primary), 1) !important;
+}
+
+[dir] .hover\:bg-success:hover {
+  background-color: rgba(var(--vs-success), 1) !important;
+}
+
+[dir] .hover\:bg-danger:hover {
+  background-color: rgba(var(--vs-danger), 1) !important;
+}
+
+[dir] .hover\:bg-warning:hover {
+  background-color: rgba(var(--vs-warning), 1) !important;
+}
+
+[dir] .hover\:bg-dark:hover {
+  background-color: rgba(var(--vs-dark), 1) !important;
+}
+
+.hover\:text-primary:hover {
+  color: rgba(var(--vs-primary), 1) !important;
+}
+
+.hover\:text-success:hover {
+  color: rgba(var(--vs-success), 1) !important;
+}
+
+.hover\:text-danger:hover {
+  color: rgba(var(--vs-danger), 1) !important;
+}
+
+.hover\:text-warning:hover {
+  color: rgba(var(--vs-warning), 1) !important;
+}
+
+.hover\:text-dark:hover {
+  color: rgba(var(--vs-dark), 1) !important;
+}
+
+[dir=ltr] .bg-primary-gradient {
+  background: linear-gradient(118deg, rgba(var(--vs-primary), 1), rgba(var(--vs-primary), 0.7)) !important;
+}
+
+[dir=rtl] .bg-primary-gradient {
+  background: linear-gradient(-118deg, rgba(var(--vs-primary), 1), rgba(var(--vs-primary), 0.7)) !important;
+}
+
+[dir=ltr] .bg-success-gradient {
+  background: linear-gradient(118deg, rgba(var(--vs-success), 1), rgba(var(--vs-success), 0.7)) !important;
+}
+
+[dir=rtl] .bg-success-gradient {
+  background: linear-gradient(-118deg, rgba(var(--vs-success), 1), rgba(var(--vs-success), 0.7)) !important;
+}
+
+[dir=ltr] .bg-danger-gradient {
+  background: linear-gradient(118deg, rgba(var(--vs-danger), 1), rgba(var(--vs-danger), 0.7)) !important;
+}
+
+[dir=rtl] .bg-danger-gradient {
+  background: linear-gradient(-118deg, rgba(var(--vs-danger), 1), rgba(var(--vs-danger), 0.7)) !important;
+}
+
+[dir=ltr] .bg-warning-gradient {
+  background: linear-gradient(118deg, rgba(var(--vs-warning), 1), rgba(var(--vs-warning), 0.7)) !important;
+}
+
+[dir=rtl] .bg-warning-gradient {
+  background: linear-gradient(-118deg, rgba(var(--vs-warning), 1), rgba(var(--vs-warning), 0.7)) !important;
+}
+
+[dir=ltr] .bg-dark-gradient {
+  background: linear-gradient(118deg, rgba(var(--vs-dark), 1), rgba(var(--vs-dark), 0.7)) !important;
+}
+
+[dir=rtl] .bg-dark-gradient {
+  background: linear-gradient(-118deg, rgba(var(--vs-dark), 1), rgba(var(--vs-dark), 0.7)) !important;
+}
+
+.dropdown-custom .vs-dropdown--custom {
+  overflow: hidden;
+}
+
+[dir] .dropdown-custom .vs-dropdown--custom {
+  padding: 0 !important;
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+[dir] .dropdown-custom .vs-dropdown--menu--after {
+  background: rgba(var(--vs-primary), 1) !important;
+}
+
+[dir=ltr] .dropdown-custom .vs-dropdown--menu--after {
+  right: 1.6rem !important;
+}
+
+[dir=rtl] .dropdown-custom .vs-dropdown--menu--after {
+  left: 1.6rem !important;
+}
+
+.vx-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[dir] .vx-row {
+  margin: 0 -1rem;
+}
+
+[dir] .vx-row > .vx-col {
+  padding: 0 1rem;
+}
+
+.vx-row.match-height > .vx-col {
+  display: flex;
+}
+
+[dir] .vx-row.no-gutter {
+  margin: 0;
+}
+
+[dir] .vx-row.no-gutter > .vx-col {
+  padding: 0;
+}
+
+[dir] .vs-input-no-border .vs-input--input {
+  border: none !important;
+}
+
+[dir] .vs-input-no-border .vs-input--input:focus {
+  border: none !important;
+}
+
+[dir] .vs-input-no-shdow-focus .vs-input--input:focus {
+  box-shadow: none !important;
+}
+
+[dir] .vs-input-shadow-drop input {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+}
+
+.sidebar-spacer {
+  width: calc(100% - 260px);
+}
+
+[dir=ltr] .sidebar-spacer {
+  margin-left: 260px;
+}
+
+[dir=rtl] .sidebar-spacer {
+  margin-right: 260px;
+}
+
+.sidebar-spacer-with-margin {
+  width: calc(100% - 260px - 2.2rem);
+}
+
+[dir=ltr] .sidebar-spacer-with-margin {
+  margin-left: calc(260px + 2.2rem);
+}
+
+[dir=rtl] .sidebar-spacer-with-margin {
+  margin-right: calc(260px + 2.2rem);
+}
+
+.sidebar-spacer--wide {
+  width: calc(100% - 400px);
+}
+
+[dir=ltr] .sidebar-spacer--wide {
+  margin-left: 400px;
+}
+
+[dir=rtl] .sidebar-spacer--wide {
+  margin-right: 400px;
+}
+
+.background-absolute .vs-sidebar--background {
+  position: absolute;
+}
+
+[dir] .vs-content-sidebar.items-no-padding .vs-sidebar--items {
+  padding: 0;
+}
+
+.full-vs-sidebar .vs-sidebar {
+  max-width: calc(100% - 260px);
+}
+
+[dir=ltr] .full-vs-sidebar .vs-sidebar {
+  margin-left: 260px;
+}
+
+[dir=rtl] .full-vs-sidebar .vs-sidebar {
+  margin-right: 260px;
+}
+
+@media only screen and (max-width: 992px) {
+  .full-vs-sidebar .vs-sidebar {
+    max-width: 100%;
+  }
+  [dir=ltr] .full-vs-sidebar .vs-sidebar {
+    margin-left: 0;
+  }
+  [dir=rtl] .full-vs-sidebar .vs-sidebar {
+    margin-right: 0;
+  }
+}
+
+[dir] .vs-select-no-border .vs-select--input {
+  border: none !important;
+}
+
+[dir] .tabs-shadow-none .vs-tabs--ul {
+  box-shadow: none;
+}
+
+[dir] .tab-action-btn-fill-conatiner.con-vs-tabs .vs-tabs--content {
+  padding: 23px 10px !important;
+}
+
+[dir] .d-theme-dark-bg, [dir] .d-theme-dark-light-bg {
+  background-color: #fff;
+}
+
+[dir] .d-theme-dark-border {
+  border-color: #fff;
+}
+
+[dir] .d-theme-border-grey-light {
+  border-color: #dae1e7;
+}
+
+.d-theme-text-inverse {
+  color: #fff;
+}
+
+[dir] .theme-dark .d-theme-dark-bg {
+  background-color: #10163a;
+}
+
+[dir] .theme-dark .d-theme-dark-light-bg {
+  background-color: #262c49;
+}
+
+[dir] .theme-dark .d-theme-input-dark-bg input {
+  background-color: #10163a;
+}
+
+.theme-dark .d-theme-heading-color {
+  color: #2c2c2c;
+}
+
+.theme-dark .d-theme-text-inverse {
+  color: #626262;
+}
+
+[dir] .theme-dark .d-theme-border-grey-light, [dir] .theme-dark .d-theme-dark-border {
+  border-color: #414561;
+}
+
+[dir] .theme-dark .vs-con-table.table-dark-inverted .vs-con-tbody .vs-table--tbody-table tr {
+  background: #10163a !important;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-big {
+  font-size: 4rem;
+}
+
+.text-color-base {
+  color: #626262;
+}
+
+.user-list {
+  display: flex;
+}
+
+.user-list .con-vs-avatar {
+  transition: 0.3s;
+}
+
+.user-list .con-vs-avatar:hover {
+  -webkit-transform: translateY(-5px) scale(1.07);
+  z-index: 999;
+}
+
+[dir] .user-list .con-vs-avatar:hover {
+          transform: translateY(-5px) scale(1.07);
+  box-shadow: 0 14px 24px rgba(62, 57, 107, 0.2);
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+[dir] ul.bordered-items > li:not(:last-of-type):not([class*=shadow]) {
+  border-bottom: 1px solid #dae1e7;
+}
+
+/*=========================================================================================
+  File Name: _fixesVuesax.scss
+  Description: Partial - Fixes/Add vuesax framework styles
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+[dir] .con-vs-alert {
+  box-shadow: none !important;
+}
+
+.vs-alert {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.vs-alert code {
+  color: #fff;
+}
+
+[dir] .vs-alert code {
+  background: #b5b5b5;
+}
+
+.vs-alert--title {
+  color: inherit;
+}
+
+.vs-avatar--text.feather {
+  font-size: 1.3rem;
+}
+
+.vs-avatar--con-img img {
+  height: 100%;
+}
+
+.vs-button {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+}
+
+[dir] .vs-button.vs-button-gradient:hover {
+  box-shadow: none !important;
+}
+
+[dir] .vs-button:not(.vs-radius):not(.includeIconOnly):not(.small):not(.large) {
+  padding: 0.75rem 2rem;
+}
+
+[dir] .vs-button:not(.vs-radius):not(.includeIconOnly):not(.small):not(.large).vs-button-border {
+  padding: 0.679rem 2rem;
+}
+
+[dir] .vs-button.small:not(.includeIconOnly) {
+  padding: 0.5rem 1.5rem;
+}
+
+[dir] .vs-button.large:not(.includeIconOnly) {
+  padding: 1rem 2.5rem;
+}
+
+.vs-button.large {
+  font-size: 1.25rem;
+}
+
+.vs-button.large .vs-button--icon {
+  font-size: 1.25rem;
+}
+
+[dir] .vs-button.round {
+  border-radius: 1.5rem;
+}
+
+[dir] .vs-button.includeIcon {
+  float: none;
+}
+
+.vs-breadcrumb--ol a:focus,
+.vs-breadcrumb--ol a:hover {
+  color: #7367F0;
+}
+
+.vs-breadcrumb--ol .active {
+  color: #7367F0;
+}
+
+.vs-checkbox-small .vs-checkbox--input:checked + .vs-checkbox .vs-icon {
+  -webkit-transform: translateY(-3px);
+}
+
+[dir] .vs-checkbox-small .vs-checkbox--input:checked + .vs-checkbox .vs-icon {
+  margin-top: 6px;
+          transform: translateY(-3px);
+}
+
+[dir=ltr] .vs-checkbox-small .vs-checkbox--input:checked + .vs-checkbox .vs-icon {
+  margin-left: -1px;
+}
+
+[dir=rtl] .vs-checkbox-small .vs-checkbox--input:checked + .vs-checkbox .vs-icon {
+  margin-right: -1px;
+}
+
+.vs-checkbox--check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[dir] .con-chips .con-chips--input {
+  border: none;
+}
+
+[dir] .con-chips .con-vs-chip {
+  margin: 0.75rem;
+}
+
+[dir=ltr] .con-chips .con-chips--remove-all {
+  right: 9px;
+}
+
+[dir=rtl] .con-chips .con-chips--remove-all {
+  left: 9px;
+}
+
+.con-chips .con-chips--remove-all > .vs-icon {
+  font-size: 1.3rem;
+}
+
+.con-vs-chip {
+  min-height: 26px;
+  min-width: 26px;
+  font-size: 0.8rem;
+}
+
+.vs-collapse-item--header {
+  font-size: 1.2rem;
+}
+
+[dir] .vs-collapse-item--header {
+  padding: 1rem;
+}
+
+.con-content--item {
+  font-size: 1rem;
+}
+
+[dir] .con-content--item {
+  padding: 1rem;
+}
+
+.vs-collapse.default .open-item .con-content--item,
+.vs-collapse.shadow .open-item .con-content--item,
+.vs-collapse.border .open-item .con-content--item,
+.vs-collapse.margin .open-item .con-content--item {
+  opacity: 1;
+}
+
+[dir] .vs-collapse.default .open-item .con-content--item, [dir] .vs-collapse.shadow .open-item .con-content--item, [dir] .vs-collapse.border .open-item .con-content--item, [dir] .vs-collapse.margin .open-item .con-content--item {
+  padding: 1rem;
+}
+
+.con-vs-dialog {
+  z-index: 52005;
+}
+
+.con-vs-dialog .vs-dialog header .dialog-title {
+  color: inherit;
+}
+
+[dir] .con-vs-dialog .vs-dialog header .dialog-title {
+  padding: 0.8rem;
+}
+
+.con-vs-dialog .vs-dialog header span.after {
+  width: 0;
+}
+
+.con-vs-dialog .vs-dialog .vs-dialog-text {
+  font-size: 1rem;
+}
+
+[dir] .con-vs-dialog .vs-dialog .vs-dialog-text {
+  padding: 1rem;
+}
+
+[dir] .con-vs-dialog .vs-dialog footer {
+  padding: 1rem;
+}
+
+[dir] .con-vs-dialog .vs-dialog footer .vs-button:last-of-type {
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+[dir=ltr] .con-vs-dialog .vs-dialog footer .vs-button:last-of-type {
+  margin-left: 0.5rem !important;
+}
+
+[dir=rtl] .con-vs-dialog .vs-dialog footer .vs-button:last-of-type {
+  margin-right: 0.5rem !important;
+}
+
+.vs-con-dropdown {
+  color: inherit;
+  font-size: 1rem;
+}
+
+[dir] .dropdown-button-container .vs-button {
+  padding: 0.72rem 1.5rem !important;
+}
+
+[dir] .dropdown-button-container .vs-button-line {
+  padding: 9px 10px !important;
+}
+
+.con-vs-dropdown--menu {
+  z-index: 42000;
+}
+
+.vs-input--placeholder {
+  top: 0px;
+}
+
+[dir=ltr] .vs-input--input.hasIcon:not(.icon-after-input) + .vs-input--placeholder {
+  padding-left: 3rem !important;
+}
+
+[dir=rtl] .vs-input--input.hasIcon:not(.icon-after-input) + .vs-input--placeholder {
+  padding-right: 3rem !important;
+}
+
+[dir=ltr] .vs-input--input.hasIcon:not(.icon-after-input):focus + .vs-placeholder-label {
+  padding-left: 0.7rem !important;
+}
+
+[dir=rtl] .vs-input--input.hasIcon:not(.icon-after-input):focus + .vs-placeholder-label {
+  padding-right: 0.7rem !important;
+}
+
+.vs-con-input .vs-inputx {
+  font-size: 1rem;
+}
+
+[dir] .vs-con-input .vs-inputx {
+  padding: 0.7rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+[dir] .vs-con-input .vx-inputx:not(.input-rounded-full) {
+  border-radius: 5px;
+}
+
+.vs-input--input.normal {
+  font-size: 1rem !important;
+}
+
+[dir] .vs-input--input.normal {
+  padding: 0.7rem !important;
+}
+
+.vs-input--input.normal ~ .vs-input--icon.feather {
+  top: 9px;
+}
+
+.vs-input--input.large {
+  font-size: 1.2rem !important;
+}
+
+[dir] .vs-input--input.large {
+  padding: 1rem !important;
+}
+
+[dir=ltr] .vs-input--input.large.hasIcon {
+  padding: 1rem 0.8rem 1rem 3rem !important;
+}
+
+[dir=rtl] .vs-input--input.large.hasIcon {
+  padding: 1rem 3rem 1rem 0.8rem !important;
+}
+
+.vs-input--input.large ~ .vs-input--icon {
+  top: 1rem !important;
+}
+
+[dir=ltr] .vs-input--input.large ~ .vs-input--icon {
+  left: 0.8rem !important;
+}
+
+[dir=rtl] .vs-input--input.large ~ .vs-input--icon {
+  right: 0.8rem !important;
+}
+
+.vs-input--input.small {
+  font-size: 0.8rem !important;
+}
+
+[dir] .vs-input--input.small {
+  padding: 0.4rem !important;
+}
+
+.vs-input--input.small ~ .vs-input--icon.feather {
+  top: 7px !important;
+}
+
+[dir=ltr] .vs-input--input.hasIcon {
+  padding: 0.7rem 1rem 0.7rem 3rem !important;
+}
+
+[dir=rtl] .vs-input--input.hasIcon {
+  padding: 0.7rem 3rem 0.7rem 1rem !important;
+}
+
+[dir=ltr] .vs-input--input.hasIcon.icon-after-input {
+  padding: 0.7rem 3rem 0.7rem 0.7rem !important;
+}
+
+[dir=rtl] .vs-input--input.hasIcon.icon-after-input {
+  padding: 0.7rem 0.7rem 0.7rem 3rem !important;
+}
+
+[dir] .vs-input--placeholder.normal {
+  padding: 0.7rem !important;
+}
+
+[dir] .vs-input--placeholder.large {
+  padding: 1rem !important;
+}
+
+.vs-input--placeholder.small {
+  font-size: 0.8rem !important;
+}
+
+[dir] .vs-input--placeholder.small {
+  padding: 0.2rem 0.6rem !important;
+}
+
+[dir=ltr] .vs-input--icon.feather {
+  padding: 0.2rem 0.5rem 0rem 0.4rem;
+}
+
+[dir=rtl] .vs-input--icon.feather {
+  padding: 0.2rem 0.4rem 0rem 0.5rem;
+}
+
+[dir] .vs-input.input-rounded-full input {
+  border-radius: 20px;
+}
+
+[dir=ltr] .vs-input.input-rounded-full .vs-input--input.hasIcon {
+  padding: 0.8rem 1rem 0.8rem 3rem !important;
+}
+
+[dir=rtl] .vs-input.input-rounded-full .vs-input--input.hasIcon {
+  padding: 0.8rem 3rem 0.8rem 1rem !important;
+}
+
+[dir] .vs-input.input-rounded-full .input-span-placeholder {
+  padding-top: 0.7rem !important;
+}
+
+[dir=ltr] .vs-input.input-rounded-full .input-span-placeholder {
+  padding-left: 3rem !important;
+}
+
+[dir=rtl] .vs-input.input-rounded-full .input-span-placeholder {
+  padding-right: 3rem !important;
+}
+
+.vs-input.input-rounded-full .vs-icon {
+  font-size: 1rem !important;
+}
+
+[dir] .vs-input.input-rounded-full .vs-icon {
+  margin-top: 0.1rem !important;
+}
+
+[dir=ltr] .vs-input.input-rounded-full .vs-icon {
+  margin-left: 0.6rem !important;
+}
+
+[dir=rtl] .vs-input.input-rounded-full .vs-icon {
+  margin-right: 0.6rem !important;
+}
+
+.vs-list--item .list-titles .vs-list--subtitle {
+  font-size: 0.85rem;
+}
+
+[dir] .vs-list--item:last-child {
+  border-bottom: none;
+}
+
+.vs-navbar .vs-navbar--item a {
+  color: inherit;
+}
+
+.vs-navbar-color-transparent .vs-navbar--item a:hover {
+  color: #7367F0 !important;
+}
+
+.vs-navbar-gradient .vs-navbar--item.is-active-item a {
+  color: #fff !important;
+}
+
+.vs-notifications {
+  z-index: 200000 !important;
+}
+
+.vs-notifications h3 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 15.96px;
+}
+
+[dir] .vs-pagination--li.is-current {
+  border-radius: 50%;
+}
+
+[dir] .vs-pagination--li.is-current .effect {
+  border-radius: 50%;
+}
+
+.vs-pagination--li:hover:not(.is-current) {
+  color: var(--vs-color-pagination) !important;
+}
+
+[dir] .vs-pagination--ul {
+  padding: 0;
+}
+
+[dir] .vs-popup--title h3, [dir] .vs-notifications h3 {
+  margin-bottom: 0;
+}
+
+.con-vs-popup {
+  z-index: 53000;
+}
+
+.con-vs-popup .vs-popup--content {
+  font-size: 1rem;
+}
+
+[dir] .con-vs-popup .vs-popup--content {
+  padding: 1rem;
+}
+
+.con-vs-checkbox,
+.con-vs-radio {
+  justify-content: flex-start !important;
+}
+
+.vs-radio--label {
+  line-height: 1;
+}
+
+.con-vs-radio {
+  display: inline-flex;
+}
+
+.con-select .vs-select--input {
+  font-size: 1rem;
+}
+
+[dir] .con-select .vs-select--input {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.vs-select--options {
+  font-size: 1rem;
+  z-index: 530001;
+}
+
+[dir] .vs-select--options {
+  border: 1px solid #eee;
+}
+
+.vs-select--options span {
+  color: #626262;
+  font-size: 1rem;
+}
+
+[dir] .v-select .dropdown-toggle .vs__actions .clear {
+  padding-top: 4px;
+}
+
+.vs-sidebar {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.vs-sidebar .vs-sidebar--items {
+  overflow: hidden;
+  height: 100%;
+}
+
+.vs-switch--text {
+  font-size: 0.7rem;
+}
+
+[dir] .vs-con-table {
+  background: transparent;
+}
+
+[dir] .vs-con-table .vs-table--header .vs-table--search {
+  padding: 1rem 0;
+}
+
+.vs-con-table .vs-table--header .vs-table--search .vs-table--search-input {
+  font-size: 0.9rem;
+}
+
+[dir] .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input {
+  padding: 10px 28px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[dir=ltr] .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input:focus + i {
+  left: 10px;
+}
+
+[dir=rtl] .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input:focus + i {
+  right: 10px;
+}
+
+[dir=ltr] .vs-con-table .vs-table--header .vs-table--search i {
+  left: 10px;
+}
+
+[dir=rtl] .vs-con-table .vs-table--header .vs-table--search i {
+  right: 10px;
+}
+
+.vs-con-table .vs-con-tbody {
+  width: 100%;
+  overflow: auto;
+}
+
+[dir] .vs-con-table .vs-con-tbody {
+  background: #f8f8f8;
+  border: 2px solid #f8f8f8;
+}
+
+.vs-con-table .vs-con-tbody .con-vs-checkbox {
+  justify-content: center !important;
+}
+
+.vs-con-table .vs-con-tbody .vs-table--tbody-table {
+  font-size: 1rem;
+}
+
+.vs-con-table .vs-con-tbody .vs-table--tbody-table .tr-spacer {
+  height: 2px;
+}
+
+[dir] .vs-con-table .vs-con-tbody .vs-table--tbody-table .tr-table .tr-expand td {
+  padding: 0;
+}
+
+[dir] .vs-con-table .vs-con-tbody .vs-table--tbody-table .tr-table td {
+  padding: 1rem;
+}
+
+[dir] .vs-con-table .vs-con-tbody .vs-table--tbody-table .vs-table--thead th {
+  padding: 10px 15px;
+}
+
+[dir] .vs-con-table .vs-con-tbody .vs-table--tbody-table .vs-table--thead .con-td-check {
+  background: transparent;
+  box-shadow: none;
+}
+
+[dir] .vs-con-table .vs-con-tbody .vs-table--tbody-table .tr-values .vs-table--td {
+  padding: 10px 15px;
+}
+
+[dir] .vs-con-table .vs-table--pagination {
+  margin-top: 1rem;
+}
+
+.con-slot-tabs {
+  width: 100%;
+}
+
+.vs-tabs--li {
+  white-space: nowrap;
+}
+
+.vs-tabs--li button {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+[dir] .vs-tabs-position-left .vs-tabs--li {
+  padding: 0.35rem 0.3rem;
+}
+
+.vs-tabs--li button {
+  font-family: inherit;
+  color: inherit;
+}
+
+.vs-tabs--li .vs-icon-primary,
+.vs-tabs--li .vs-icon-success,
+.vs-tabs--li .vs-icon-warning,
+.vs-tabs--li .vs-icon-danger,
+.vs-tabs--li .vs-icon-dark {
+  color: inherit;
+}
+
+.vs-tabs .con-tab .vs-button-filled:hover {
+  color: #fff !important;
+}
+
+.vs-textarea {
+  font-size: 1rem;
+  color: inherit;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+[dir] .vs-con-textarea {
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.vs-con-textarea > h4 {
+  color: inherit;
+}
+
+.vs-tooltip {
+  z-index: 52000;
+}
+
+.con-img-upload {
+  overflow: hidden;
+}
+
+[dir] .con-img-upload {
+  padding: 0.6rem;
+}
+
+[dir] .con-img-upload .img-upload {
+  margin: 15px;
+}
+
+.view-upload {
+  z-index: 52000;
+}
+
+/*=========================================================================================
+    File Name: _tailwindFixes.scss
+    Description: partial- Tailwind Fixes
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+button:focus {
+  outline: none;
+}
+
+/*=========================================================================================
+  File Name: _rtl.scss
+  Description: partial- rtl - imports rtl styles
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+  File Name: _rtlFixes.scss
+  Description: partial - rtl fix - fixes rtl specific issues
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.vuesax-app-is-rtl .ps-container:not(.enable-rtl-x-scroll) .ps__scrollbar-x-rail {
+  display: none !important;
+}
+
+.vuesax-app-is-rtl .ag-pinned-left-cols-container {
+  margin-right: 5px;
+}
+
+.vuesax-app-is-rtl .vs-dropdown-menu.rightx .vs-dropdown--menu--after {
+  right: unset !important;
+  left: 30px !important;
+}
+
+.vuesax-app-is-rtl .vs-loading > * {
+  top: 0;
+}
+
+.vuesax-app-is-rtl .con-vs-dropdown--menu {
+  transform: translateX(-100%);
+}
+
+.vuesax-app-is-rtl .vx-navbar-dropdown.dropdownx-enter,
+.vuesax-app-is-rtl .vx-navbar-dropdown.dropdownx-leave-to {
+  transform: translateY(8px) !important;
+}
+
+@media (max-width: 500px) {
+  .vuesax-app-is-rtl .vx-navbar-dropdown.dropdown-custom.con-vs-dropdown--menu {
+    transform: translateX(100%);
+  }
+
+  .vuesax-app-is-rtl .vx-navbar-dropdown.dropdown-custom.dropdownx-enter,
+  .vuesax-app-is-rtl .vx-navbar-dropdown.dropdown-custom.dropdownx-leave-to {
+    transform: translate(100%, 8px) !important;
+  }
+}
+
+.vuesax-app-is-rtl .flatpickr-prev-month,
+.vuesax-app-is-rtl .flatpickr-next-month {
+  transform: rotateY(180deg);
+}
+
+.vuesax-app-is-rtl .swiper-container-cube.swiper-container-rtl .swiper-slide {
+  transform-origin: 100% 0 !important;
+}
+
+.vuesax-app-is-rtl .scroll-area-v-nav-menu .ps__scrollbar-y-rail {
+  right: unset !important;
+  left: -6px !important;
+}
+
+/*=========================================================================================
+  File Name: _rtlOverrides.scss
+  Description: partial - rtl fix - fixes styles overridden by rtl
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.v-step[x-placement^=bottom] .v-step__arrow {
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+}
+
+.v-step[x-placement^=left] .v-step__arrow {
+  border-bottom-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-color: transparent !important;
+}
+
+.v-step[x-placement^=top] .v-step__arrow {
+  border-bottom-color: transparent !important;
+  border-right-color: transparent !important;
+  border-left-color: transparent !important;
+}
+
+.v-step[x-placement^=right] .v-step__arrow {
+  border-bottom-color: transparent !important;
+  border-top-color: transparent !important;
+  border-left-color: transparent !important;
+}
+
+.swiper-container-rtl .swiper-button-prev {
+  right: 10px !important;
+  left: auto !important;
+}
+
+.swiper-container-rtl .swiper-button-next {
+  left: 10px !important;
+  right: auto !important;
+}
+
+.vjs-fluid {
+  padding-top: 41.6666666667% !important;
+}
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-in": "./node_modules/moment/locale/en-in.js",
+	"./en-in.js": "./node_modules/moment/locale/en-in.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./en-sg": "./node_modules/moment/locale/en-sg.js",
+	"./en-sg.js": "./node_modules/moment/locale/en-sg.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fil": "./node_modules/moment/locale/fil.js",
+	"./fil.js": "./node_modules/moment/locale/fil.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./ga": "./node_modules/moment/locale/ga.js",
+	"./ga.js": "./node_modules/moment/locale/ga.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-deva": "./node_modules/moment/locale/gom-deva.js",
+	"./gom-deva.js": "./node_modules/moment/locale/gom-deva.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it-ch": "./node_modules/moment/locale/it-ch.js",
+	"./it-ch.js": "./node_modules/moment/locale/it-ch.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku.js": "./node_modules/moment/locale/ku.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./oc-lnc": "./node_modules/moment/locale/oc-lnc.js",
+	"./oc-lnc.js": "./node_modules/moment/locale/oc-lnc.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tk": "./node_modules/moment/locale/tk.js",
+	"./tk.js": "./node_modules/moment/locale/tk.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-mo": "./node_modules/moment/locale/zh-mo.js",
+	"./zh-mo.js": "./node_modules/moment/locale/zh-mo.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
